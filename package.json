@@ -4,7 +4,10 @@
   "description": "",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "bcrypt": "^3.0.7",
+    "express": "^4.17.1",
+    "node-sass": "^4.13.0",
+    "pg": "^7.17.0"
   },
   "devDependencies": {},
   "scripts": {
