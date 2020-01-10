@@ -2,43 +2,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: grey;
+   
     
 }
-nav{
-   float: left;
-   width: 100%;
+.navmenu{
+    background: #242424 !important;
 }
 
-.links{
-    display: flex;
-    font-weight: bold;
-    margin-right: 70px;
+.navlinks{
+    border-right: 1px solid #363636;
+    font-size: 16px;
+}
+a{
     text-decoration: none;
-    text-transform: uppercase;
-    font-size: 14px;
-    color: white;
-    float: left;
-
-}
-.topnav-right{
-    margin-left: auto;
-    
-}
-.signup{
-    display: flex;
-    font-weight: bold;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 11px;
-    color: white;
-    float: left;
-
-}
-
-.nav-links{
-    display: flex;
-    padding-left: 0;
-
+    color: #fff;
 }
 

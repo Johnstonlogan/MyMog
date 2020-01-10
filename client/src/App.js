@@ -4,23 +4,28 @@ import { Login } from "./components/Login";
 import { TopNav } from "./components/TopNav";
 import { Switch, Route } from "react-router-dom";
 import { Container } from "semantic-ui-react";
+import { LogoBar } from "./components/LogoBar";
 import "./App.css";
 
 function App() {
   return (
     <div>
       <header>
-        <TopNav />
+        <LogoBar />
       </header>
+
       <Container>
-        <Switch>
-          <Route path="/sign-up">
-            <SignUpForm />
-          </Route>
-          <Route path="/login">
-            <Login />
-          </Route>
-        </Switch>
+        <div className="App">
+          <TopNav />
+          <Switch>
+            <Route path="/sign-up">
+              <SignUpForm />
+            </Route>
+            <Route path="/login">
+              <Login />
+            </Route>
+          </Switch>
+        </div>
       </Container>
     </div>
   );
