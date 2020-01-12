@@ -9,25 +9,26 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
-      <header>
-        <LogoBar />
-      </header>
+    <Switch>
+      <Route exact path="/login">
+        <Login />
+      </Route>
 
-      <Container>
-        <div className="App">
-          <TopNav />
-          <Switch>
-            <Route path="/sign-up">
+      <div>
+        <header>
+          <LogoBar />
+        </header>
+
+        <Container>
+          <div className="App">
+            <TopNav />
+            <Route exact path="/sign-up">
               <SignUpForm />
             </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-          </Switch>
-        </div>
-      </Container>
-    </div>
+          </div>
+        </Container>
+      </div>
+    </Switch>
   );
 }
 

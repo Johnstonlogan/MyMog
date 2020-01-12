@@ -23,25 +23,37 @@ export const Login: React.FC<Props> = () =>{
 
  
       return(
-        <div>
+        <div className="login">
+        <div className="login-container">
+          
         <Form>
+        <h1>Welcome Back</h1>
           <Form.Field>
           <label>
             Email:
+            </label>
             <input name="email" type="text" onChange={handleChange} />
-          </label>
+        
          </Form.Field>
          <Form.Field>
           <label>
             Password:
+            </label>
             <input name="password" type="password" onChange={handleChange} />
-          </label>
+          
           </Form.Field>
-          <div>
-          <Button onClick={handleSubmit}>Submit</Button>
-          <Link className="signup-link" to="/sign-up">Sign Up</Link>
-          </div>
+          <Link to="login/forgot">Forgot Your Password?</Link>
+        
         </Form>
+        <div className="submit-button">
+      <Button primary onClick={handleSubmit}>Login</Button>
+      <div><p>Need an account?<Link to="sign-up"> Register.</Link></p></div>
+         </div>
+         
+          
+      </div>
+      
+     
       </div>
       )
 }
