@@ -12,13 +12,13 @@ render(){
         <Container>
             <Menu className="navmenu">
         <Menu.Item className="navlinks">
-            <Link to="/home">Home</Link>
+            <Link className="links" to="/home">Home</Link>
         </Menu.Item>
         <Menu.Item className="navlinks">
-            <Link to="/profile">Profile</Link>
+            <Link className="links" to="/profile">Profile</Link>
         </Menu.Item>
         <Menu.Item className="navlinks">
-            <Link to="/browse">Browse</Link>
+            <Link className="links" to="/browse">Browse</Link>
         </Menu.Item>
 
 

@@ -6,8 +6,7 @@ import {Button, Form } from 'semantic-ui-react'
 
 
 interface User{
-  fName: string;
-  lName: string;
+  username: string;
   email: string;
   password: string;
 }
@@ -31,16 +30,11 @@ export const SignUp_Form:  React.FC<Props> = () => {
       <Form>
         <Form.Field>
         <label>
-          First name:
-          <input name="fName" type="text" onChange={handleChange} />
+          Username:
+          <input name="username" type="text" onChange={handleChange} />
         </label>
        </Form.Field>
-       <Form.Field>
-        <label>
-          Last name:
-          <input name="lName" type="text" onChange={handleChange} />
-        </label>
-        </Form.Field>
+      
         <Form.Field>
         <label>
           Email:

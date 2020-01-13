@@ -13,6 +13,9 @@ function App() {
       <Route exact path="/login">
         <Login />
       </Route>
+      <Route exact path="/sign-up">
+        <SignUpForm />
+      </Route>
 
       <div>
         <header>
@@ -22,9 +25,6 @@ function App() {
         <Container>
           <div className="App">
             <TopNav />
-            <Route exact path="/sign-up">
-              <SignUpForm />
-            </Route>
           </div>
         </Container>
       </div>

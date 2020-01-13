@@ -27,7 +27,7 @@ export const Login: React.FC<Props> = () =>{
         <div className="login-container">
           
         <Form>
-        <h1>Welcome Back</h1>
+        <h1 className="login-header">Welcome Back</h1>
           <Form.Field>
           <label>
             Email:
@@ -46,8 +46,8 @@ export const Login: React.FC<Props> = () =>{
         
         </Form>
         <div className="submit-button">
-      <Button primary onClick={handleSubmit}>Login</Button>
-      <div><p>Need an account?<Link to="sign-up"> Register.</Link></p></div>
+      <Button className="login-button" primary onClick={handleSubmit}>Login</Button>
+      <div><p className="login-signup">Need an account?<Link to="sign-up"> Register.</Link></p></div>
          </div>
          
           
