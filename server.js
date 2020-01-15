@@ -24,12 +24,12 @@ app.get("/user", (req, res, next) => {
   });
 });
 app.post("/user/new_user", (req, res, next) => {
-  let { fName, lName, email, password, admin } = req.body;
+  let { email, password, admin, username } = req.body;
   bcrypt.hash(password, saltRounds).then(hash => {
     if (admin == null) admin = false;
     pool.query(
-      "INSERT INTO user_tbl (fname, lname, email, password, admin) VALUES ($1,$2,$3,$4,$5) RETURNING id",
-      [fName, lName, email, hash, admin],
+      "INSERT INTO user_tbl ( email, password, admin, username) VALUES ($1,$2,$3,$4) RETURNING id",
+      [email, hash, admin, username],
       (error, results) => {
         if (error) {
           res.status(400);

@@ -83,3 +83,10 @@
     width: calc( 723px  +  5rem ) !important;
   }
 }
+label{
+  font-size: 17px !important;
+  color: #fff !important;
+}
+input{
+  margin-bottom: 15px !important;
+}

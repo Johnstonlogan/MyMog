@@ -29,14 +29,14 @@ export const Login: React.FC<Props> = () =>{
         <Form>
         <h1 className="login-header">Welcome Back</h1>
           <Form.Field>
-          <label>
+          <label className="login-label">
             Email:
             </label>
             <input name="email" type="text" onChange={handleChange} />
         
          </Form.Field>
          <Form.Field>
-          <label>
+          <label className="login-label">
             Password:
             </label>
             <input name="password" type="password" onChange={handleChange} />
@@ -47,7 +47,7 @@ export const Login: React.FC<Props> = () =>{
         </Form>
         <div className="submit-button">
       <Button className="login-button" primary onClick={handleSubmit}>Login</Button>
-      <div><p className="login-signup">Need an account?<Link to="sign-up"> Register.</Link></p></div>
+      <div><p className="login-signup">Need an account?<Link className="login-link" to="sign-up"> Register.</Link></p></div>
          </div>
          
           
