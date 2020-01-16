@@ -11,7 +11,7 @@ export const getUsers = () => {
     });
 };
 
-export const createUser = userInfo => {
+export const createUser = (userInfo, errorFunction) => {
   console.log(userInfo, "user info");
   axios
     .post("/user/new_user", userInfo)
@@ -19,9 +19,8 @@ export const createUser = userInfo => {
       console.log(response);
     })
     .catch(error => {
-      console.log(error.response.status);
-      if (error.response.status == 400) {
-        alert("This email is already in use, return to log in");
+      if (error.response.status == 404) {
+        errorFunction(error.response);
       }
     });
 };

@@ -42,11 +42,12 @@ export const Login: React.FC<Props> = () =>{
             <input name="password" type="password" onChange={handleChange} />
           
           </Form.Field>
-          <Link to="login/forgot">Forgot Your Password?</Link>
+          <Link to="login/forgot" className="login-link">Forgot Your Password?</Link>
         
         </Form>
         <div className="submit-button">
       <Button className="login-button" primary onClick={handleSubmit}>Login</Button>
+      <hr />
       <div><p className="login-signup">Need an account?<Link className="login-link" to="sign-up"> Register.</Link></p></div>
          </div>
          

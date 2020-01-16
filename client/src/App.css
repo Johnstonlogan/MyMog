@@ -10,6 +10,10 @@
   opacity: .5;
   margin-top: 40px;
 }
+.error-message{
+  background-color: rgb(238, 11, 11) !important;
+  color: black !important;
+}
 
 
 @media only screen and (min-width: 768px)  {

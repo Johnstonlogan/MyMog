@@ -3,7 +3,7 @@ import{ useForm }from "./useForm"
 import { createUser } from "../server";
 import "../styling/SignUpStyle.scss"
 import {Link} from "react-router-dom"
-import {Button, Form } from 'semantic-ui-react'
+import {Button, Form, Message } from 'semantic-ui-react'
 
 
 
@@ -14,21 +14,26 @@ interface User{
 }
 interface Props{
   values: User;
-
+  handleError: void;
+  
+ 
 }
 
-export const SignUp_Form:  React.FC<Props> = () => {
+
+export const SignUp_Form:  React.FC<Props> = (props) => {
 
   const createNewUser = (): any => {
-    createUser(values)  
+    createUser(values, props.handleError) 
+    
   }
- 
-  const { values, handleSubmit, handleChange } = useForm(createNewUser);
+  
+  let { values, handleSubmit, handleChange } = useForm(createNewUser);
 
   
 
   return (
     <div className="signup">
+     
       <div className="signup-container">
       <Form>
       <h1 className="signup-header">Create An Account</h1>
@@ -57,7 +62,7 @@ export const SignUp_Form:  React.FC<Props> = () => {
     
         <Button className="signup-button" primary onClick={handleSubmit}>Create Account</Button>
         <hr />
-        <div>
+        <div >
           <p className="signup-login">Already have an account? <Link className="signupForm-link" to="/login">Login.</Link></p>
         </div>
       </Form>
