@@ -31,16 +31,3 @@ render(){
          </div>)
 }
 }
-
-{/* <nav className="topnav" >
-            <ul className="nav-links">
-               
-                <Link className="links" to = "/home">Home</Link> 
-                
-                <Link className="links" to="/profile">  Profile</Link>
-                  
-              <div className="topnav-right">
-                <Link className="signup" to="/login">Sign in/Sign up</Link> 
-                </div>
-            </ul>
-        </nav> */}

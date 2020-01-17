@@ -1,26 +1,23 @@
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
-export const getUsers = () => {
-  axios
-    .get("/user")
-    .then(response => {
-      return response.data;
-    })
-    .catch(error => {
-      console.log(error, "this is error");
-    });
-};
-
+// create user, if error return to <Message /> on App.js level
 export const createUser = (userInfo, errorFunction) => {
   console.log(userInfo, "user info");
   axios
     .post("/user/new_user", userInfo)
-    .then(response => {
-      console.log(response);
+    .then(() => {
+      useHistory().push("/home");
     })
     .catch(error => {
-      if (error.response.status == 404) {
+      if (error.response.status === 404 || 401) {
         errorFunction(error.response);
       }
     });
+};
+
+export const getBluePosts = () => {
+  axios.get("/blueposts").then(res => {
+    console.log(res, "here");
+  });
 };

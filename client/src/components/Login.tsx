@@ -18,7 +18,7 @@ export const Login: React.FC<Props> = () =>{
       }
 
 
-      const{values, handleSubmit, handleChange} = useForm(login);
+const{values, handleSubmit, handleChange} = useForm(login);
 
 
  

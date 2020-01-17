@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { SignUp_Form as SignUpForm } from "./components/SignUp_Form";
 import { Login } from "./components/Login";
 import { TopNav } from "./components/TopNav";
 import { Switch, Route } from "react-router-dom";
 import { Container, Message } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
+import { getBluePosts } from "./server";
 import "./App.css";
 
 class App extends React.Component {
@@ -19,6 +20,9 @@ class App extends React.Component {
   handleDismiss = () => {
     this.setState({ error: false });
   };
+  componentDidMount() {
+    getBluePosts();
+  }
 
   render() {
     return (

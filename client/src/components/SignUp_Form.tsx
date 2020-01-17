@@ -3,7 +3,7 @@ import{ useForm }from "./useForm"
 import { createUser } from "../server";
 import "../styling/SignUpStyle.scss"
 import {Link} from "react-router-dom"
-import {Button, Form, Message } from 'semantic-ui-react'
+import {Button, Form } from 'semantic-ui-react'
 
 
 
@@ -22,6 +22,8 @@ interface Props{
 
 export const SignUp_Form:  React.FC<Props> = (props) => {
 
+  // create a new user, props.handleError is for any error messages and will be located 
+  // at app.js level
   const createNewUser = (): any => {
     createUser(values, props.handleError) 
     
