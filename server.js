@@ -64,7 +64,9 @@ app.use(function(req, res, next) {
 
 app.get("/blueposts", (req, res, next) => {
   axios.get("https://us.forums.blizzard.com/en/wow/groups/blizzard-tracker/posts.json").then(response => {
-    console.log(response.data);
+    res.json({
+      newsArray: response.data
+    });
   });
 });
 

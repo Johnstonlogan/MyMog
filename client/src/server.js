@@ -16,8 +16,8 @@ export const createUser = (userInfo, errorFunction) => {
     });
 };
 
-export const getBluePosts = () => {
-  axios.get("/blueposts").then(res => {
-    console.log(res, "here");
+export async function getBluePosts() {
+  return await axios.get("/blueposts").then(res => {
+    return res.data.newsArray;
   });
-};
+}

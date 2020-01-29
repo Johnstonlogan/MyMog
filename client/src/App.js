@@ -6,12 +6,14 @@ import { Switch, Route } from "react-router-dom";
 import { Container, Message } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
+import { RecentBar } from "./components/RecentBar";
 import "./App.css";
 
 class App extends React.Component {
   state = {
     error: false,
-    errorMessage: ""
+    errorMessage: "",
+    blues: []
   };
   setError = err => {
     console.log(err, "error");
@@ -20,8 +22,10 @@ class App extends React.Component {
   handleDismiss = () => {
     this.setState({ error: false });
   };
-  componentDidMount() {
-    getBluePosts();
+  async componentDidMount() {
+    await getBluePosts().then(res => {
+      for (let i = 0; i < 5; i++) this.state.blues.push(res[i].title);
+    });
   }
 
   render() {
@@ -51,6 +55,7 @@ class App extends React.Component {
             <div className="App">
               <TopNav />
             </div>
+            {this.state.blues.length > 0 ? <RecentBar blueArray={this.state.blues} /> : null}
           </Container>
         </div>
       </Switch>
