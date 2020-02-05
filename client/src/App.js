@@ -3,7 +3,7 @@ import { SignUp_Form as SignUpForm } from "./components/SignUp_Form";
 import { Login } from "./components/Login";
 import { TopNav } from "./components/TopNav";
 import { Switch, Route } from "react-router-dom";
-import { Container, Message } from "semantic-ui-react";
+import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
 import { RecentBar } from "./components/RecentBar";
@@ -16,7 +16,6 @@ class App extends React.Component {
     blues: []
   };
   setError = err => {
-    console.log(err, "error");
     this.setState({ error: true, errorMessage: err.data });
   };
   handleDismiss = () => {
@@ -26,9 +25,19 @@ class App extends React.Component {
     await getBluePosts().then(res => {
       for (let i = 0; i < 5; i++) this.state.blues.push(res[i].title);
     });
+    this.forceUpdate();
   }
 
   render() {
+    if (!this.state.blues.length)
+      return (
+        <div className="loader-container">
+          <div className="loader">
+            <Loader active inline="centered" size="massive" />
+          </div>
+        </div>
+      );
+
     return (
       <Switch>
         <Route exact path="/login">
@@ -46,21 +55,23 @@ class App extends React.Component {
           <SignUpForm handleError={this.setError} />
         </Route>
 
-        <div>
+        <React.Fragment>
           <header>
             <LogoBar />
           </header>
 
           <Container>
+            <TopNav />
             <div className="App">
-              <TopNav />
+              <Route exact path="/">
+                <RecentBar blueArray={this.state.blues} />
+              </Route>
             </div>
-            {this.state.blues.length > 0 ? <RecentBar blueArray={this.state.blues} /> : null}
           </Container>
-        </div>
+        </React.Fragment>
       </Switch>
     );
   }
 }
 
-export default App;
+export { App };
