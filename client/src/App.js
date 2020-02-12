@@ -2,7 +2,7 @@ import React from "react";
 import { SignUp_Form as SignUpForm } from "./components/SignUp_Form";
 import { Login } from "./components/Login";
 import { TopNav } from "./components/TopNav";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
@@ -23,7 +23,10 @@ class App extends React.Component {
   };
   async componentDidMount() {
     await getBluePosts().then(res => {
-      for (let i = 0; i < 5; i++) this.state.blues.push(res[i].title);
+      for (let i = 0; i < 5; i++) {
+        console.log(res[2].title);
+        this.state.blues.push({ title: res[i].title, id: res[i].id });
+      }
     });
     this.forceUpdate();
   }
@@ -40,6 +43,7 @@ class App extends React.Component {
 
     return (
       <Switch>
+        <Redirect exact from="/" to="/home" />
         <Route exact path="/login">
           <Login />
         </Route>
@@ -63,12 +67,13 @@ class App extends React.Component {
           <Container>
             <TopNav />
             <div className="App">
-              <Route exact path="/">
+              <Route exact path="/home">
                 <RecentBar blueArray={this.state.blues} />
               </Route>
             </div>
           </Container>
         </React.Fragment>
+        <Redirect exact from="/" to="/home" />
       </Switch>
     );
   }
