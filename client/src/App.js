@@ -6,14 +6,15 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
-import { RecentBar } from "./components/RecentBar";
 import "./App.css";
+import { HomePage } from "./components/HomePage";
 
 class App extends React.Component {
   state = {
     error: false,
     errorMessage: "",
-    blues: []
+    blues: [],
+    guides: [{ title: "Hello", image: null, link: null, content: null }]
   };
   setError = err => {
     this.setState({ error: true, errorMessage: err.data });
@@ -42,11 +43,15 @@ class App extends React.Component {
       );
 
     return (
+      // Switch starts -  all imported components
       <Switch>
+        {/* Redirect to /home on page load */}
         <Redirect exact from="/" to="/home" />
+
         <Route exact path="/login">
           <Login />
         </Route>
+        {/* Top error message, checks for error message in state if false will return null*/}
         <Route exact path="/sign-up">
           {this.state.error ? (
             <Message
@@ -56,6 +61,8 @@ class App extends React.Component {
               onDismiss={this.handleDismiss}
             />
           ) : null}
+
+          {/* sign up form - passed error handling function  */}
           <SignUpForm handleError={this.setError} />
         </Route>
 
@@ -67,13 +74,13 @@ class App extends React.Component {
           <Container>
             <TopNav />
             <div className="App">
+              {/* passed blue posts array from mmo-champion */}
               <Route exact path="/home">
-                <RecentBar blueArray={this.state.blues} />
+                <HomePage blues={this.state.blues} guides={this.state.guides} />
               </Route>
             </div>
           </Container>
         </React.Fragment>
-        <Redirect exact from="/" to="/home" />
       </Switch>
     );
   }
