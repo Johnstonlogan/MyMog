@@ -14,7 +14,7 @@ content: string}]
 
 export const WowheadGuide = (props: Props) =>{
 return(
-<p className="test">{props.guides[0].title}</p>
+<div className="guide-container">{}</div>
 )
 
 }

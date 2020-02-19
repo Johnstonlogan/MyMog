@@ -1,6 +1,7 @@
 import React from 'react'
 import { RecentBar } from "./RecentBar";
 import { WowheadGuide } from './WowheadGuides';
+import "../styling/HomePageStyle.scss"
 
 interface Props{
     blues: [{title: string, id: number}],
@@ -14,9 +15,9 @@ interface Props{
 export const HomePage = (props: Props) =>{
 return (
     <div className="home-container">
-     <div className="blue-posts">
+     
     <RecentBar blueArray={props.blues} />
-    </div>
+    
     <WowheadGuide guides={props.guides} />
     </div>
 )
