@@ -7,6 +7,7 @@ import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
 import "./App.css";
+import Mage from "./images/MageMog.jpg";
 import { HomePage } from "./components/HomePage";
 
 class App extends React.Component {
@@ -14,7 +15,25 @@ class App extends React.Component {
     error: false,
     errorMessage: "",
     blues: [],
-    guides: [{ title: "Hello", image: null, link: null, content: null }]
+    guides: [
+      {
+        title: "Wowhead Deathknight Guide",
+        image: Mage,
+        link: null,
+        content: "Check out these awesome Deathknight Transmogs on Wowhead!",
+        class: "Deathknight"
+      },
+      { title: "Wowhead Druid Guide", image: null, link: null, content: null, class: "Druid" },
+      { title: "Wowhead Hunter Guide", image: null, link: null, content: null, class: "Hunter" },
+      { title: "Wowhead Mage Guide", image: null, link: null, content: null, class: "Mage" },
+      { title: "Wowhead Monk Guide", image: null, link: null, content: null, class: "Monk" },
+      { title: "Wowhead Paladin Guide", image: null, link: null, content: null, class: "Paladin" },
+      { title: "Wowhead Priest Guide", image: null, link: null, content: null, class: "Priest" },
+      { title: "Wowhead Rogue Guide", image: null, link: null, content: null, class: "Rogue" },
+      { title: "Wowhead Shaman Guide", image: null, link: null, content: null, class: "Shaman" },
+      { title: "Wowhead Warlock Guide", image: null, link: null, content: null, class: "Warlock" },
+      { title: "Wowhead Warrior Guide", image: null, link: null, content: null, class: "Warrior" }
+    ]
   };
   setError = err => {
     this.setState({ error: true, errorMessage: err.data });

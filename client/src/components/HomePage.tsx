@@ -8,7 +8,8 @@ interface Props{
     guides: [{image: string,
         title: string,
         link: string,
-        content: string}]
+        content: string
+        class: string}]
 
 }
 
