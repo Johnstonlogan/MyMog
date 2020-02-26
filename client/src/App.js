@@ -8,6 +8,7 @@ import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
 import "./App.css";
 import Mage from "./images/MageMog.jpg";
+import Bert from "./images/BertPally.jpg";
 import { HomePage } from "./components/HomePage";
 
 class App extends React.Component {
@@ -19,20 +20,80 @@ class App extends React.Component {
       {
         title: "Wowhead Deathknight Guide",
         image: Mage,
-        link: null,
-        content: "Check out these awesome Deathknight Transmogs on Wowhead!",
+        link: "https://www.wowhead.com/death-knight-transmogrification-armor-sets-guide",
+        content: "Deathgrip some outfits into your aresnal. Check out the guide on Wowhead!",
         class: "Deathknight"
       },
-      { title: "Wowhead Druid Guide", image: null, link: null, content: null, class: "Druid" },
-      { title: "Wowhead Hunter Guide", image: null, link: null, content: null, class: "Hunter" },
-      { title: "Wowhead Mage Guide", image: null, link: null, content: null, class: "Mage" },
-      { title: "Wowhead Monk Guide", image: null, link: null, content: null, class: "Monk" },
-      { title: "Wowhead Paladin Guide", image: null, link: null, content: null, class: "Paladin" },
-      { title: "Wowhead Priest Guide", image: null, link: null, content: null, class: "Priest" },
-      { title: "Wowhead Rogue Guide", image: null, link: null, content: null, class: "Rogue" },
-      { title: "Wowhead Shaman Guide", image: null, link: null, content: null, class: "Shaman" },
-      { title: "Wowhead Warlock Guide", image: null, link: null, content: null, class: "Warlock" },
-      { title: "Wowhead Warrior Guide", image: null, link: null, content: null, class: "Warrior" }
+      {
+        title: "Wowhead Druid Guide",
+        image: null,
+        link: "https://www.wowhead.com/druid-transmogrification-armor-sets-guide",
+        content: "Shapeshift your way into some amazing transmogs. Check out the guide on Wowhead!",
+        class: "Druid"
+      },
+      {
+        title: "Wowhead Hunter Guide",
+        image: null,
+        link: null,
+        content: "Trap some transmogs for yourself. Check out the guide on Wowhead!",
+        class: "Hunter"
+      },
+      {
+        title: "Wowhead Mage Guide",
+        image: Mage,
+        link: null,
+        content: "Blink your way into the classiest clothes in Azeroth. Check out the guide on Wowhead!",
+        class: "Mage"
+      },
+      {
+        title: "Wowhead Monk Guide",
+        image: null,
+        link: null,
+        content: "Roll your way into some nice pants. Check out the guide on Wowhead!",
+        class: "Monk"
+      },
+      {
+        title: "Wowhead Paladin Guide",
+        image: Bert,
+        link: null,
+        content: "Bubble hearth your way into a nice pair of gauntlets. Check out the guide on Wowhead!",
+        class: "Paladin"
+      },
+      {
+        title: "Wowhead Priest Guide",
+        image: null,
+        link: null,
+        content: "Cast Power Word: Transmog and find a nice robe. Check out the guide on Wowhead!",
+        class: "Priest"
+      },
+      {
+        title: "Wowhead Rogue Guide",
+        image: null,
+        link: "",
+        content: "Sneak your way into some of the quietest boots. Check out the guide on Wowhead!",
+        class: "Rogue"
+      },
+      {
+        title: "Wowhead Shaman Guide",
+        image: null,
+        link: null,
+        content: "Shock all your friends with your new outfit. Check out the guide on Wowhead!",
+        class: "Shaman"
+      },
+      {
+        title: "Wowhead Warlock Guide",
+        image: null,
+        link: null,
+        content: "Summon the demon of captivating looks. Check out the guide on Wowhead!",
+        class: "Warlock"
+      },
+      {
+        title: "Wowhead Warrior Guide",
+        image: null,
+        link: null,
+        content: "Charge your way into some impressive spauldrons. Check out the guide on Wowhead!",
+        class: "Warrior"
+      }
     ]
   };
   setError = err => {

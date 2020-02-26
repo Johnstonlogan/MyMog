@@ -14,7 +14,6 @@ class: string}]
 
 
 export const WowheadGuide = (props: Props) =>{
-    console.log()
 return(
 <div className="guide-container">{props.guides.map(guide =>{
   return (
@@ -23,6 +22,9 @@ return(
         <div className="guide-content">
         <h1 className={guide.class} >{guide.title}</h1>
         <p>{guide.content}</p>
+        <form action={guide.link} target="_blank">
+        <button className="guide-button" >See guide<i className="angle right icon"></i></button>
+        </form>
         </div>
        
       </div>
