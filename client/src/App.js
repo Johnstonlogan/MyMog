@@ -7,8 +7,10 @@ import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { getBluePosts } from "./server";
 import "./App.css";
-import Mage from "./images/MageMog.jpg";
 import Bert from "./images/BertPally.jpg";
+import Priest from "./images/Priest.jpg";
+import Druid from "./images/Druid.jpg";
+import Mage from "./images/Mage.png";
 import { HomePage } from "./components/HomePage";
 
 class App extends React.Component {
@@ -26,7 +28,7 @@ class App extends React.Component {
       },
       {
         title: "Wowhead Druid Guide",
-        image: null,
+        image: Druid,
         link: "https://www.wowhead.com/druid-transmogrification-armor-sets-guide",
         content: "Shapeshift your way into some amazing transmogs. Check out the guide on Wowhead!",
         class: "Druid"
@@ -61,7 +63,7 @@ class App extends React.Component {
       },
       {
         title: "Wowhead Priest Guide",
-        image: null,
+        image: Priest,
         link: null,
         content: "Cast Power Word: Transmog and find a nice robe. Check out the guide on Wowhead!",
         class: "Priest"
