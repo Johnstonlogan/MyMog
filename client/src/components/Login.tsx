@@ -2,6 +2,7 @@ import React from 'react'
 import {Button, Form } from 'semantic-ui-react'
 import{ useForm }from "./useForm"
 import {Link} from "react-router-dom"
+import {login} from "../server"
 import "../styling/LoginStyle.scss"
 
 interface User{
@@ -9,16 +10,17 @@ interface User{
     password: string;
 }
 interface Props{
-    values: User
+    values: User,
+    handleError: void;
 }
 
-export const Login: React.FC<Props> = () =>{
-    const login = (): any => {
-        
+export const Login: React.FC<Props> = (props) =>{
+    const userLogin = (): any => {
+        login(values, props.handleError)
       }
 
 
-const{values, handleSubmit, handleChange} = useForm(login);
+const{values, handleSubmit, handleChange} = useForm(userLogin);
 
 
  

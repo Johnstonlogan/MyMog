@@ -3,11 +3,24 @@ import { useHistory } from "react-router-dom";
 
 // create user, if error return to <Message /> on App.js level
 export const createUser = (userInfo, errorFunction) => {
-  console.log(userInfo, "user info");
   axios
     .post("/user/new_user", userInfo)
     .then(() => {
       useHistory().push("/home");
+    })
+    .catch(error => {
+      if (error.response.status === 404 || 401) {
+        errorFunction(error.response);
+      }
+    });
+};
+// log in, create JWT
+export const login = (userInfo, errorFunction) => {
+  console.log(userInfo, "User info");
+  axios
+    .post("/user/login", userInfo)
+    .then(res => {
+      return res;
     })
     .catch(error => {
       if (error.response.status === 404 || 401) {

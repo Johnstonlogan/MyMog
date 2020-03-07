@@ -8,13 +8,17 @@ const pool = new Pool({
 });
 
 const checkEmail = async email => {
-  pool.query("SELECT email FROM user_tbl WHERE email = $1", [email], (error, results) => {
-    if (results.rows.length === 0) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  pool
+    .query("SELECT email FROM user_tbl WHERE email = $1", [email], (error, results) => {
+      if (results.rows.length === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .then(res => {
+      console.log(res);
+    });
 };
 
 module.exports = {

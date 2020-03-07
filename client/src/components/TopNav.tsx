@@ -20,7 +20,7 @@ render(){
         <Menu.Item className="navlinks">
             <Link className="links" to="/browse">Tournaments</Link>
         </Menu.Item>
-
+ 
 
 
             </Menu>

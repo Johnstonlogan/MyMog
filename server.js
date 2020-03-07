@@ -63,6 +63,12 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+app.post("/user/login", (req, res) => {
+  let { email, password, admin, username } = req.body;
+  // authenticate user
+
+  queries.checkEmail(email.toLowerCase());
+});
 
 app.get("/blueposts", (req, res, next) => {
   axios.get("https://us.forums.blizzard.com/en/wow/groups/blizzard-tracker/posts.json").then(response => {
