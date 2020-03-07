@@ -7,14 +7,18 @@ const pool = new Pool({
   port: 5432
 });
 
-const checkEmail = email => {
-  pool.query("SELECT email FROM user_tbl WHERE email = $1", [email], (error, results) => {
-    if (results.rows.length == 0) {
-      return false;
-    } else {
-      return true;
-    }
-  });
+const checkEmail = async email => {
+  pool
+    .query("SELECT email FROM user_tbl WHERE email = $1", [email], (error, results) => {
+      if (results.rows.length === 0) {
+        return true;
+      } else {
+        return false;
+      }
+    })
+    .then(res => {
+      console.log(res);
+    });
 };
 
 module.exports = {

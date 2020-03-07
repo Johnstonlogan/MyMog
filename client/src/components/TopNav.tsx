@@ -18,9 +18,9 @@ render(){
             <Link className="links" to="/profile">Profile</Link>
         </Menu.Item>
         <Menu.Item className="navlinks">
-            <Link className="links" to="/browse">Browse</Link>
+            <Link className="links" to="/browse">Tournaments</Link>
         </Menu.Item>
-
+ 
 
 
             </Menu>

@@ -131,7 +131,7 @@ class App extends React.Component {
         <Redirect exact from="/" to="/home" />
 
         <Route exact path="/login">
-          <Login />
+          <Login handleError={this.setError} />
         </Route>
         {/* Top error message, checks for error message in state if false will return null*/}
         <Route exact path="/sign-up">
