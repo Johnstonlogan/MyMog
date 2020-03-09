@@ -4,6 +4,8 @@ import{ useForm }from "./useForm"
 import {Link} from "react-router-dom"
 import {login} from "../server"
 import "../styling/LoginStyle.scss"
+import {ReactSVG} from "react-svg"
+import MogLogo from "../images/mog.svg"
 
 interface User{
     email: string;
@@ -26,8 +28,11 @@ const{values, handleSubmit, handleChange} = useForm(userLogin);
 
       return(
         <div className="login">
+        
         <div className="login-container">
-          
+        <div className="login-logo-container">
+          <img className="login-logo" src={MogLogo} />
+          </div>
         <Form>
         <h1 className="login-header">Welcome Back</h1>
           <Form.Field>
@@ -46,14 +51,14 @@ const{values, handleSubmit, handleChange} = useForm(userLogin);
           </Form.Field>
           <Link to="login/forgot" className="login-link">Forgot Your Password?</Link>
         
-        </Form>
+        
         <div className="submit-button">
       <Button className="login-button" primary onClick={handleSubmit}>Login</Button>
       <hr />
       <div><p className="login-signup">Need an account?<Link className="login-link" to="sign-up"> Register.</Link></p></div>
          </div>
          
-          
+         </Form>
       </div>
       
      

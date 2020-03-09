@@ -17,16 +17,17 @@
 
 .login-container{
     border-radius: 10px;
-    background-color: #2e2d2daf;
+    background-color: #252525af;
     width: 400px;
-    height: auto;
-    padding: 25px;
+    height: auto; 
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-   
- 
+
+}
+.login-container form{
+    padding: 5px 25px 25px 25px;
 }
 .login-header{
   text-align: center;
@@ -39,8 +40,22 @@
     font-size: 17px;
 }
 .login-link{
-    color: #b993ff !important;
+    color: #93278f !important;
 }
+.login-logo-container{
+  padding: 20px;
+  height: 80px;
+  width: 100%;
+  text-align: center;
+  background-color:#1a1a1aaf;
+  border-radius: 10px 10px 0px 0px;
+   
+}
+.login-logo{
+    width: 90%;
+    height: 90%;
+}
+
 
 
 .login-button{

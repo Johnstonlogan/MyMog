@@ -9,10 +9,12 @@ export const createUser = (userInfo, errorFunction) => {
       useHistory().push("/home");
     })
     .catch(error => {
-      if(error){
-      if (error.response.status === 404 || 401) {
-        errorFunction(error.response);
-      }}
+      console.log(error.response, "response");
+      if (error.response) {
+        if (error.response.status === 404 || 401) {
+          errorFunction(error.response);
+        }
+      }
     });
 };
 // log in, create JWT
@@ -20,6 +22,7 @@ export const login = (userInfo, errorFunction) => {
   axios
     .post("/user/login", userInfo)
     .then(res => {
+      console.log(res, "login results");
       return res;
     })
     .catch(error => {
