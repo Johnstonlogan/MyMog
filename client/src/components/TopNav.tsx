@@ -10,22 +10,28 @@ export class TopNav extends Component{
 render(){
     return (<div className="navbar">
         <Container>
+            
             <Menu className="navmenu">
+                
+        <Link className="links" to="/home">
         <Menu.Item className="navlinks">
-            <Link className="links" to="/home">Home</Link>
+            Home
         </Menu.Item>
-        <Menu.Item className="navlinks">
-            <Link className="links" to="/profile">Profile</Link>
-        </Menu.Item>
-        <Menu.Item className="navlinks">
-            <Link className="links" to="/browse">Tournaments</Link>
-        </Menu.Item>
- 
+        </Link>
 
+        <Link className="links" to="/profile">
+        <Menu.Item className="navlinks">
+           Profile
+        </Menu.Item>
+        </Link>
 
+        <Link className="links" to="/browse">
+        <Menu.Item className="navlinks">
+        Tournaments
+        </Menu.Item>
+        </Link>
             </Menu>
-        
-       
+
         </Container>
     
          </div>)

@@ -15,6 +15,7 @@ interface Props{
 
 export const HomePage = (props: Props) =>{
 return (
+    // container used for all home page components
     <div className="home-container">
      
     <RecentBar blueArray={props.blues} />

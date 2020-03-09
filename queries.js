@@ -1,25 +1,30 @@
 const { Pool } = require("pg");
+require("dotenv").config();
 const pool = new Pool({
-  user: "mymogadmin",
-  host: "mymog.cdbuzlmtuf9n.us-west-1.rds.amazonaws.com",
-  password: "MyMog123!",
-  database: "MyMog",
-  port: 5432
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DATABASE,
+  port: process.env.DB_PORT
 });
 
 const checkEmail = async email => {
-  pool
-    .query("SELECT email FROM user_tbl WHERE email = $1", [email], (error, results) => {
-      if (results.rows.length === 0) {
-        return true;
-      } else {
-        return false;
-      }
-    })
-    .then(res => {
-      console.log(res);
-    });
-};
+ return new Promise((resolve, reject) =>{
+  pool.query("SELECT email FROM user_tbl WHERE email = $1", [email]).then(res =>{
+    if(res.rows.length === 0){
+   
+      return resolve(true)
+    }
+    else {
+ 
+      return resolve(false)}
+   
+  })
+
+ })
+}
+
+
 
 module.exports = {
   checkEmail

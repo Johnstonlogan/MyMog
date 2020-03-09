@@ -9,14 +9,14 @@ export const createUser = (userInfo, errorFunction) => {
       useHistory().push("/home");
     })
     .catch(error => {
+      if(error){
       if (error.response.status === 404 || 401) {
         errorFunction(error.response);
-      }
+      }}
     });
 };
 // log in, create JWT
 export const login = (userInfo, errorFunction) => {
-  console.log(userInfo, "User info");
   axios
     .post("/user/login", userInfo)
     .then(res => {

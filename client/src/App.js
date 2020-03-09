@@ -107,7 +107,6 @@ class App extends React.Component {
   async componentDidMount() {
     await getBluePosts().then(res => {
       for (let i = 0; i < 5; i++) {
-        console.log(res[2].title);
         this.state.blues.push({ title: res[i].title, id: res[i].id });
       }
     });
@@ -157,6 +156,7 @@ class App extends React.Component {
             <TopNav />
             <div className="App">
               {/* passed blue posts array from mmo-champion */}
+              {/* passed guides array for front page mapping */}
               <Route exact path="/home">
                 <HomePage blues={this.state.blues} guides={this.state.guides} />
               </Route>

@@ -15,15 +15,15 @@ interface Props{
 }
 
 export const Login: React.FC<Props> = (props) =>{
-    const userLogin = (): any => {
-        login(values, props.handleError)
+
+  // user login passing values ={email, password} error handling function
+const userLogin = (): any => {
+    login(values, props.handleError)
       }
 
 
 const{values, handleSubmit, handleChange} = useForm(userLogin);
 
-
- 
       return(
         <div className="login">
         <div className="login-container">
