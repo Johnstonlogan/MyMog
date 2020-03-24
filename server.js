@@ -66,26 +66,25 @@ app.use(function(req, res, next) {
 app.post("/user/login", (req, res) => {
   let { email, password, admin, username } = req.body;
   // authenticate user
-  queries.checkEmail(email.toLowerCase()).then(res => {
-    if(res === false){
-      console.log(password)
-      pool.query("SELECT password FROM user_tbl WHERE email = $1", [email.toLowerCase()]).then(res => {
-   
-        bcrypt.compare( password,res.rows[0].password).then(res =>{
-          
-        })
-      })
-    }
-    else{return null}
+  queries
+    .checkEmail(email.toLowerCase())
+    .then(res => {
+      if (res === false) {
+        console.log(password);
+        pool.query("SELECT password FROM user_tbl WHERE email = $1", [email.toLowerCase()]).then(res => {
+          bcrypt.compare(password, res.rows[0].password).then(res => {
+            if (res === true) {
+            }
+          });
+        });
+      } else {
+        return null;
+      }
+    })
 
-  })
-   
-    
-    
-    
-    .catch(err => {throw new Error(err)});
-  
-  
+    .catch(err => {
+      throw new Error(err);
+    });
 });
 
 app.get("/blueposts", (req, res, next) => {

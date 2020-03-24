@@ -8,6 +8,7 @@
     margin-bottom: 40px;
   
 }
+
 .logobar-signup{
     height: 40px;
     width: 100px;
@@ -15,6 +16,10 @@
     margin-left: 15px !important;
     margin-bottom: 0px;
     color: #fff;
+    
+}
+.logobar-signup:hover{
+  border: 1px #fff solid; 
 }
 .logobar-login{
     height: 40px;
@@ -24,15 +29,28 @@
     margin-bottom: 0px;
     color: #fff !important;
     background-color: #363636 !important;
+  
 
 }
+.logobar-login:hover{
+  background-color: #222222 !important;
+  border: 1px #fff solid;
+}
 .logobar-right{
-    display: flex;
-    justify-content: flex-end;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-end;
+}
+.logobar-left img{
+  width: 100%;
+  height: 100%;
 }
 .logobar-container{
     margin-right: auto;
     margin-left: auto;
+    display: flex;
+   
 }
 
 @media only screen and (min-width: 768px)  {
