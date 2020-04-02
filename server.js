@@ -6,6 +6,8 @@ const saltRounds = 10;
 const axios = require("axios");
 const queries = require("./queries");
 const Pool = require("pg").Pool;
+const jwt = require("jsonwebtoken")
+const fs = require("fs")
 require("dotenv").config();
 
 const pool = new Pool({
@@ -63,25 +65,45 @@ app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
-app.post("/user/login", (req, res) => {
-  let { email, password, admin, username } = req.body;
+app.post("/user/login", (req, result) => {
+  let { email, password} = req.body;
   // authenticate user
   queries
     .checkEmail(email.toLowerCase())
     .then(res => {
+      // if res ===  false, create JWT, compare passwords
       if (res === false) {
-        console.log(password);
-        pool.query("SELECT password FROM user_tbl WHERE email = $1", [email.toLowerCase()]).then(res => {
-          bcrypt.compare(password, res.rows[0].password).then(res => {
+        pool.query("SELECT email,password,username,id,created FROM user_tbl WHERE email = $1", [email.toLowerCase()]).then(results => {
+          const privateKey = fs.readFileSync("secret.txt", "utf8")
+      // create JWT
+      console.log(results.rows[0])
+          let token = jwt.sign({
+            username: results.rows[0].username, 
+            email: results.rows[0].email, 
+            admin: results.rows[0].admin, 
+            id: results.rows[0].id, 
+            created: results.rows[0].created},privateKey
+            )
+      // compare passwords
+          bcrypt.compare(password, results.rows[0].password).then(res => {
             if (res === true) {
+              // send results to front end, include: JWT and user information
+              result.json({JSONtoken:token, User: { username: results.rows[0].username, 
+                email: results.rows[0].email, 
+                admin: results.rows[0].admin, 
+                id: results.rows[0].id, 
+                created: results.rows[0].created }} )
+             
+
             }
           });
         });
       } else {
         return null;
       }
+      
     })
-
+   
     .catch(err => {
       throw new Error(err);
     });

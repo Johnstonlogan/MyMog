@@ -9,7 +9,7 @@ export const LogoBar = () => {
    return  <div className="logobar">
       <div className="logobar-container">
          <div className="logobar-left">
-      <img className="logobar-logo" src={MogLogo} />
+      <img className="logobar-logo" alt="Mog-logo" src={MogLogo} />
       </div>
          <div className="logobar-right">
          <Link to="/login"><Button className="logobar-login" >Login</Button></Link>

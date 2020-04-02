@@ -4,7 +4,6 @@ import{ useForm }from "./useForm"
 import {Link} from "react-router-dom"
 import {login} from "../server"
 import "../styling/LoginStyle.scss"
-import {ReactSVG} from "react-svg"
 import MogLogo from "../images/mog.svg"
 
 interface User{
@@ -20,7 +19,8 @@ export const Login: React.FC<Props> = (props) =>{
 
   // user login passing values ={email, password} error handling function
 const userLogin = (): any => {
-    login(values, props.handleError)
+   login(values, props.handleError)
+
       }
 
 
@@ -31,7 +31,7 @@ const{values, handleSubmit, handleChange} = useForm(userLogin);
         
         <div className="login-container">
         <div className="login-logo-container">
-          <img className="login-logo" src={MogLogo} />
+          <img alt="Mog-logo" className="login-logo" src={MogLogo} />
           </div>
         <Form>
         <h1 className="login-header">Welcome Back</h1>
