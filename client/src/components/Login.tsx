@@ -12,14 +12,16 @@ interface User{
 }
 interface Props{
     values: User,
-    handleError: void;
+    handleError: void,
+    setUser: void;
+
 }
 
 export const Login: React.FC<Props> = (props) =>{
 
   // user login passing values ={email, password} error handling function
 const userLogin = (): any => {
-   login(values, props.handleError)
+   login(values, props.handleError, props.setUser)
 
       }
 

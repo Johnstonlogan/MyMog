@@ -8,6 +8,7 @@ const queries = require("./queries");
 const Pool = require("pg").Pool;
 const jwt = require("jsonwebtoken")
 const fs = require("fs")
+const cookieParser = require("cookie-parser")
 require("dotenv").config();
 
 const pool = new Pool({
@@ -17,10 +18,10 @@ const pool = new Pool({
   database: process.env.DATABASE,
   port: process.env.DB_PORT
 });
-
+app.use(cookieParser())
 app.use(bodyParser.json());
 
-// Validate that the user email/password is a string and that it is
+// *** Validate that the user email/password is a string and that it is ***
 // NOT an empty string, also password length of 6 or more
 validateUser = user => {
   const validEmail = typeof user.email == "string" && user.email.trim() != "";
@@ -29,7 +30,7 @@ validateUser = user => {
   return validEmail && validPassword;
 };
 
-// create a new user, use validateUser (See validate user method).
+// *** create a new user, use validateUser (See validate user method). ***
 // use checkEmail to ensure email is not already in use
 app.post("/user/new_user", (req, res, next) => {
   let now = new Date();
@@ -60,11 +61,24 @@ app.post("/user/new_user", (req, res, next) => {
   }
 });
 
+
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+app.get("/user/checkToken", (req, res) =>{
+  console.log(req.cookies,"cookies" )
+  if(req.cookies.token === undefined){
+    return false 
+  }
+  else{
+    return true
+  }
+})
+
+// ------------------- *** user log in *** ------------------------------
 app.post("/user/login", (req, result) => {
   let { email, password} = req.body;
   // authenticate user
@@ -76,18 +90,18 @@ app.post("/user/login", (req, result) => {
         pool.query("SELECT email,password,username,id,created FROM user_tbl WHERE email = $1", [email.toLowerCase()]).then(results => {
           const privateKey = fs.readFileSync("secret.txt", "utf8")
       // create JWT
-      console.log(results.rows[0])
           let token = jwt.sign({
             username: results.rows[0].username, 
             email: results.rows[0].email, 
             admin: results.rows[0].admin, 
             id: results.rows[0].id, 
-            created: results.rows[0].created},privateKey
+            created: results.rows[0].created},privateKey, {expiresIn: "24h"}
             )
       // compare passwords
           bcrypt.compare(password, results.rows[0].password).then(res => {
             if (res === true) {
               // send results to front end, include: JWT and user information
+              result.cookie("token", token, {httpOnly: true, maxAge: 86400000});
               result.json({JSONtoken:token, User: { username: results.rows[0].username, 
                 email: results.rows[0].email, 
                 admin: results.rows[0].admin, 
@@ -98,6 +112,7 @@ app.post("/user/login", (req, result) => {
             }
           });
         });
+
       } else {
         return null;
       }
@@ -108,6 +123,8 @@ app.post("/user/login", (req, result) => {
       throw new Error(err);
     });
 });
+
+// ------------------*** Get blueposts from blizzard ***------------------------------
 
 app.get("/blueposts", (req, res, next) => {
   axios.get("https://us.forums.blizzard.com/en/wow/groups/blizzard-tracker/posts.json").then(response => {

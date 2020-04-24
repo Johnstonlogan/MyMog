@@ -5,12 +5,10 @@ import { TopNav } from "./components/TopNav";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
-import { getBluePosts } from "./server";
+import { getBluePosts, checkToken } from "./server";
+import {ClassGuideArray} from "./resources/ClassGuideArray"
 import "./App.css";
-import Bert from "./images/BertPally.jpg";
-import Priest from "./images/Priest.jpg";
-import Druid from "./images/Druid.jpg";
-import Mage from "./images/Mage.png";
+
 import { HomePage } from "./components/HomePage";
 
 class App extends React.Component {
@@ -18,85 +16,8 @@ class App extends React.Component {
     error: false,
     errorMessage: "",
     blues: [],
-    guides: [
-      {
-        title: "Wowhead Deathknight Guide",
-        image: Mage,
-        link: "https://www.wowhead.com/death-knight-transmogrification-armor-sets-guide",
-        content: "Deathgrip some outfits into your aresnal. Check out the guide on Wowhead!",
-        class: "Deathknight"
-      },
-      {
-        title: "Wowhead Druid Guide",
-        image: Druid,
-        link: "https://www.wowhead.com/druid-transmogrification-armor-sets-guide",
-        content: "Shapeshift your way into some amazing transmogs. Check out the guide on Wowhead!",
-        class: "Druid"
-      },
-      {
-        title: "Wowhead Hunter Guide",
-        image: null,
-        link: null,
-        content: "Trap some transmogs for yourself. Check out the guide on Wowhead!",
-        class: "Hunter"
-      },
-      {
-        title: "Wowhead Mage Guide",
-        image: Mage,
-        link: null,
-        content: "Blink your way into the classiest clothes in Azeroth. Check out the guide on Wowhead!",
-        class: "Mage"
-      },
-      {
-        title: "Wowhead Monk Guide",
-        image: null,
-        link: null,
-        content: "Roll your way into some nice pants. Check out the guide on Wowhead!",
-        class: "Monk"
-      },
-      {
-        title: "Wowhead Paladin Guide",
-        image: Bert,
-        link: null,
-        content: "Bubble hearth your way into a nice pair of gauntlets. Check out the guide on Wowhead!",
-        class: "Paladin"
-      },
-      {
-        title: "Wowhead Priest Guide",
-        image: Priest,
-        link: null,
-        content: "Cast Power Word: Transmog and find a nice robe. Check out the guide on Wowhead!",
-        class: "Priest"
-      },
-      {
-        title: "Wowhead Rogue Guide",
-        image: null,
-        link: "",
-        content: "Sneak your way into some of the quietest boots. Check out the guide on Wowhead!",
-        class: "Rogue"
-      },
-      {
-        title: "Wowhead Shaman Guide",
-        image: null,
-        link: null,
-        content: "Shock all your friends with your new outfit. Check out the guide on Wowhead!",
-        class: "Shaman"
-      },
-      {
-        title: "Wowhead Warlock Guide",
-        image: null,
-        link: null,
-        content: "Summon the demon of captivating looks. Check out the guide on Wowhead!",
-        class: "Warlock"
-      },
-      {
-        title: "Wowhead Warrior Guide",
-        image: null,
-        link: null,
-        content: "Charge your way into some impressive spauldrons. Check out the guide on Wowhead!",
-        class: "Warrior"
-      }
-    ]
+    currentUser: {},
+    guides:[]
   };
   setError = err => {
     this.setState({ error: true, errorMessage: err.data });
@@ -104,33 +25,65 @@ class App extends React.Component {
   handleDismiss = () => {
     this.setState({ error: false });
   };
+  setCurrentUser = (user) =>{
+    this.setState({currentUser: user})
+    
+  }
+  isEmpty = (obj) =>{
+    for(var key in obj){
+      if(obj.hasOwnProperty(key))
+      return false
+    }
+    return true
+
+  }
+
+ 
   async componentDidMount() {
+    let blueArray = [];
+    this.setState({guides:ClassGuideArray})
+    
     await getBluePosts().then(res => {
+     
       for (let i = 0; i < 5; i++) {
-        this.state.blues.push({ title: res[i].title, id: res[i].id });
+       blueArray.push({ title: res[i].title, id: res[i].id });
       }
+      this.setState({blues: blueArray})
     });
-    this.forceUpdate();
+   
+    
+    checkToken();
+    
   }
 
   render() {
-    if (!this.state.blues.length)
+    
+    if(!this.state.blues)
       return (
+        
         <div className="loader-container">
           <div className="loader">
             <Loader active inline="centered" size="massive" />
           </div>
         </div>
+       
       );
 
+  else if(this.isEmpty(this.state.currentUser)){
+   return <Login handleError={this.setError} setUser={this.setCurrentUser} />
+  }
+      
+     
+else
     return (
       // Switch starts -  all imported components
+      
       <Switch>
         {/* Redirect to /home on page load */}
         <Redirect exact from="/" to="/home" />
 
         <Route exact path="/login">
-          <Login handleError={this.setError} />
+          <Login handleError={this.setError} setUser={this.setCurrentUser} />
         </Route>
         {/* Top error message, checks for error message in state if false will return null*/}
         <Route exact path="/sign-up">
@@ -165,7 +118,9 @@ class App extends React.Component {
         </React.Fragment>
       </Switch>
     );
+          
   }
 }
 
-export { App };
+export { App }
+

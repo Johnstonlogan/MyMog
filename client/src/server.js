@@ -1,5 +1,7 @@
+
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+
 
 
 
@@ -11,7 +13,7 @@ export const createUser = (userInfo, errorFunction) => {
       useHistory().push("/home");
     })
     .catch(error => {
-      console.log(error.response, "response");
+
       if (error.response) {
         if (error.response.status === 404 || 401) {
           errorFunction(error.response);
@@ -20,12 +22,12 @@ export const createUser = (userInfo, errorFunction) => {
     });
 };
 // log in, create JWT
-export const login = (userInfo, errorFunction) => {
-  console.log("Logging in")
+export const login = (userInfo, errorFunction,setUser) => {
   axios
     .post("/user/login", userInfo)
-    .then(() => {
-      //YOU WANT TO ROUTE TO HOME 
+    .then((res) => {
+      setUser(res.data.User)
+      
     
     })
     .catch(error => {
@@ -37,6 +39,11 @@ export const login = (userInfo, errorFunction) => {
     }
     });
 };
+export const checkToken = () => {
+axios.get("/user/checkToken", {params: {token: "aslkdfjsa;lkfjls"}}).then(res => {
+  console.log(res)
+})
+}
 
 export async function getBluePosts() {
   return await axios.get("/blueposts").then(res => {
