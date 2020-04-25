@@ -9,9 +9,15 @@
     background-repeat: no-repeat;
     background-size: cover;
     align-items: center;
-    display: flex
+    display: flex;
+    flex-direction: column;
 
 
+}
+.copyright{
+    color: #fff;
+    opacity: .5;
+    
 }
 
 
