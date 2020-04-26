@@ -69,9 +69,9 @@ class App extends React.Component {
        
       );
 
-  else if(this.isEmpty(this.state.currentUser)){
-   return <Login handleError={this.setError} setUser={this.setCurrentUser} />
-  }
+  // else if(this.isEmpty(this.state.currentUser)){
+  //  return <Login handleError={this.setError} setUser={this.setCurrentUser} />
+  // }
       
      
 else

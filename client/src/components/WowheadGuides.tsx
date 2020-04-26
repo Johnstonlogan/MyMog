@@ -15,7 +15,7 @@ guides:[{image: string,
 
 export const WowheadGuide = (props: Props) =>{
 return(
-<div className="container clear">
+<div className="wowhead-container clear">
 {props.guides.map(guide =>{
   return (<div className={`box ${guide.class}`}>
    
