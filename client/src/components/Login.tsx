@@ -66,7 +66,7 @@ const{values, handleSubmit, handleChange} = useForm(userLogin);
 
       </div>
       <div className="copyright">
-      World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
+      Worl of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
       </div>
        
      
