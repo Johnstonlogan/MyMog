@@ -4,6 +4,7 @@ import { createUser } from "../server";
 import "../styling/SignUpStyle.scss"
 import {Link} from "react-router-dom"
 import {Button, Form } from 'semantic-ui-react'
+import MogLogo from "../images/mog.svg"
 
 
 
@@ -37,6 +38,9 @@ export const SignUp_Form:  React.FC<Props> = (props) => {
     <div className="signup">
      
       <div className="signup-container">
+      <div className="signup-logo-container">
+          <img alt="Mog-logo" className="signup-logo" src={MogLogo} />
+          </div>
       <Form>
       <h1 className="signup-header">Create An Account</h1>
         <Form.Field>

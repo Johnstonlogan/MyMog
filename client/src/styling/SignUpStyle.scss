@@ -3,7 +3,6 @@
     background-color: #2e2d2daf;
     width: 400px;
     height: auto;
-    padding: 25px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -12,6 +11,9 @@
 }
 .copyright{
     text-align: center;
+}
+.form{
+    padding: 25px;
 }
 
 .signup{
@@ -43,6 +45,19 @@
     color: #b993ff !important;
   
 }
+.signup-logo-container{
+    padding: 20px;
+    height: 80px;
+    width: 100%;
+    text-align: center;
+    background-color:#1a1a1aaf;
+    border-radius: 10px 10px 0px 0px;
+}
+.signup-logo{
+    width: 90%;
+    height: 90% ;
+}
+
 hr{
     margin-bottom: 15px;
 }
