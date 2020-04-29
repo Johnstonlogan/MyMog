@@ -14,7 +14,9 @@
     "knex": "^0.20.8",
     "node-sass": "^4.13.0",
     "pg": "^7.17.0",
-    "serverless-http": "^2.3.2"
+    "postgresql-easy": "^1.2.5",
+    "serverless-http": "^2.3.2",
+    "serverless-offline": "^6.1.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.2",

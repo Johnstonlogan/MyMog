@@ -68,6 +68,10 @@ export const SignUp_Form:  React.FC<Props> = (props) => {
           <p className="signup-login">Already have an account? <Link className="signupForm-link" to="/login">Login.</Link></p>
         </div>
       </Form>
+      
+      </div>
+      <div className="copyright">
+      World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or other countries.
       </div>
     </div>
   );

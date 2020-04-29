@@ -10,6 +10,9 @@
     justify-content: space-between;
     
 }
+.copyright{
+    text-align: center;
+}
 
 .signup{
     height: 100vh;
@@ -17,6 +20,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
+    flex-direction: column;
 
 }
 .signup-header{
