@@ -25,7 +25,7 @@
     "eject": "react-scripts eject",
     "production": "npm run build && aws s3 sync build/ s3://www.mymog.io"
   },
-  "proxy": "https://h09niedjcl.execute-api.us-west-1.amazonaws.com/",
+ 
   "eslintConfig": {
     "extends": "react-app"
   },

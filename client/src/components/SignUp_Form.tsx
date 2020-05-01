@@ -1,6 +1,6 @@
 import React from "react";
 import{ useForm }from "./useForm"
-import { createUser } from "../server";
+import { createUser } from "../services/userServices";
 import "../styling/SignUpStyle.scss"
 import {Link} from "react-router-dom"
 import {Button, Form } from 'semantic-ui-react'
