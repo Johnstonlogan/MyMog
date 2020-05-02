@@ -14,10 +14,9 @@ export const createUser = (userInfo, errorFunction) => {
       .catch(error => {
   
         if (error.response) {
-         return JSON.stringify(error)
-          // if (error.response.status === 404 || 401) {
-          //   errorFunction(error.response);
-          // }
+          if (error.response.status === 404 || 401) {
+            errorFunction(error.response);
+          }
         }
       });
   };
