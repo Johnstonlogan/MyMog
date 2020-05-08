@@ -70,7 +70,7 @@ class App extends React.Component {
       );
 
   else if(this.isEmpty(this.state.currentUser)){
-   return <SignUpForm handleError={this.setError} />
+   return <Login setUser={this.setCurrentUser} handleError={this.setError} />
   }
       
      
