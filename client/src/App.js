@@ -5,7 +5,7 @@ import { TopNav } from "./components/TopNav";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Container, Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
-import { getBluePosts, checkToken } from "./server";
+import { checkToken } from "./services/checkToken";
 import {ClassGuideArray} from "./resources/ClassGuideArray"
 import "./App.css";
 
@@ -43,16 +43,23 @@ class App extends React.Component {
     let blueArray = [];
     this.setState({guides:ClassGuideArray})
     
-    await getBluePosts().then(res => {
+    // await getBluePosts().then(res => {
      
-      for (let i = 0; i < 5; i++) {
-       blueArray.push({ title: res[i].title, id: res[i].id });
-      }
-      this.setState({blues: blueArray})
-    });
+    //   for (let i = 0; i < 5; i++) {
+    //    blueArray.push({ title: res[i].title, id: res[i].id });
+    //   }
+    //   this.setState({blues: blueArray})
+    // });
    
-    
-    checkToken();
+    console.log(this.state.currentUser)
+    checkToken().then(res =>{
+    if(res == false){
+      console.log("no user")
+    }
+    else{
+     this.setCurrentUser(res)
+    }
+    })
     
   }
 

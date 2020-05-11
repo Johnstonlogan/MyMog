@@ -2,7 +2,7 @@ import React from "react";
 import { Button, Form } from "semantic-ui-react";
 import { useForm } from "./useForm";
 import { Link } from "react-router-dom";
-import { login } from "../server";
+import { login } from "../services/loginServices";
 import "../styling/LoginStyle.scss";
 import MogLogo from "../images/mog.svg";
 
