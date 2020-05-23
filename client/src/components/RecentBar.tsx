@@ -18,7 +18,6 @@ export const RecentBar = (props: Props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-           
             {content.title}
           </a>
         );

@@ -31,7 +31,7 @@ export const SignUp_Form: React.FC<Props> = (props) => {
         <div className="signup-logo-container">
           <img alt="Mog-logo" className="signup-logo" src={MogLogo} />
         </div>
-        <Form >
+        <Form>
           <h1 className="signup-header">Create An Account</h1>
           <Form.Field>
             <label className="signup-label">Username:</label>
@@ -62,9 +62,10 @@ export const SignUp_Form: React.FC<Props> = (props) => {
         </Form>
       </div>
       <div className="copyright">
-        World of Warcraft, Warcraft and Blizzard Entertainment are trademarks or
-        registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or
-        other countries.
+      ©2004 Blizzard Entertainment, Inc. All rights reserved. World of
+          Warcraft, Warcraft and Blizzard Entertainment are trademarks or
+          registered trademarks of Blizzard Entertainment, Inc. in the U.S.
+          and/or other countries.
       </div>
     </div>
   );

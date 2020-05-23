@@ -1,8 +1,4 @@
-.signup-link{
-    float: right;
-    text-decoration: none;
-    color: black;
-}
+
 .login{
     height: 100vh;
     background-image: url("../images/Test-background.jpg");
@@ -37,15 +33,24 @@
 }
 .login-header{
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   color: #fff;
   font-weight: 200;
 }
 .login-signup{
     color: #fff;
+    margin-right: 5px;
     font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p{
+        margin-bottom: 0;
+        margin-right: 5px;
+    }
 }
 .login-link{
+    
     color: #93278f !important;
 }
 .login-logo-container{

@@ -2,6 +2,7 @@ import React from "react";
 import { RecentBar } from "./RecentBar";
 import { WowheadGuide } from "./WowheadGuides";
 import "../styling/HomePageStyle.scss";
+import { TransmogDisplay } from "./TransmogDisplay";
 
 interface Props {
   blues: [{ title: string; id: number }];
@@ -20,9 +21,14 @@ export const HomePage = (props: Props) => {
   return (
     // container used for all home page components
     <div className="home-container">
-      <RecentBar blueArray={props.blues} />
+      <div className="home-left">
+        <RecentBar blueArray={props.blues} />
+        <TransmogDisplay />
+      </div>
 
-      <WowheadGuide guides={props.guides} />
+      <div className="home-right">
+        <WowheadGuide guides={props.guides} />
+      </div>
     </div>
   );
 };

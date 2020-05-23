@@ -8,7 +8,6 @@ import Shaman from '../images/ClassIcons/shaman.png'
 import Warlock from '../images/ClassIcons/warlock.png'
 import Warrior from '../images/ClassIcons/warrior.png'
 import Monk from '../images/ClassIcons/monk.png'
-import DemonHunter from '../images/ClassIcons/demonhunter.png'
 import Druid from '../images/ClassIcons/druid.png'
 
 

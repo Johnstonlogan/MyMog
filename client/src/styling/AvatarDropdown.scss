@@ -1,0 +1,27 @@
+.dropdown-menu{
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 12px;
+    padding: 10px;
+    background-color: #292929;
+    border: 1px solid #363636 ;
+    box-shadow: 2px 3px #020202 ;
+    border-radius: 5px;
+   
+  .dropdown-logout{
+    color: #fff;
+    font-size: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items:center ;
+ 
+  }
+  .dropdown-logout:hover{
+    cursor: pointer;
+    color: #FF0000;
+}
+   
+}

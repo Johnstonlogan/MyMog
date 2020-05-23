@@ -1,5 +1,4 @@
 import React from "react";
-import Mage from "../images/ClassIcons/mage.png";
 import "../styling/WowheadStyle.scss";
 
 interface Props {
@@ -19,16 +18,15 @@ export const WowheadGuide = (props: Props) => {
     <div className="wowhead-container clear">
       {props.guides.map((guide) => {
         return (
-          <div className={`box ${guide.class}`}>
+          <div className={`box ${guide.class}`} key={guide.class}>
             <div className="text" key={guide.class}>
-              <p>{guide.class}</p>
+              <p className="class-name">{guide.class}</p>
               <div>
-                <img src={guide.image} />
+                <img alt={`${guide.class} wowhead guide`} src={guide.image} />
               </div>
               <p className="guide-content">{guide.content}</p>
               <div className="button-container">
-                <a href={guide.link} target="_blank">
-                  {" "}
+                <a href={guide.link} target="_blank" rel="noopener noreferrer">
                   <button className="guide-button">View Guide</button>
                 </a>
               </div>

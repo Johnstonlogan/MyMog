@@ -5,6 +5,12 @@
    
     
 }
+.disable{
+    pointer-events: none;
+}
+.disable:hover{
+    filter: blur(2px);
+}
 .navmenu{
     background: #292929 !important;
     border-radius: 5px 5px 0px 0px !important

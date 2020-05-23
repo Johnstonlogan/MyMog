@@ -1,17 +1,20 @@
 import axios from "axios";
 const baseURL = "https://e2h7r9igbl.execute-api.us-west-1.amazonaws.com/api";
 
-export const login = (userInfo, errorFunction, setUser) => {
+
+export const login = (userInfo, errorFunction, setUser, setToHome) => {
   axios
-    .post(baseURL + "/login", userInfo, { withCredentials: "true" })
+    .post(baseURL + "/login", userInfo)
     .then((res) => {
+      localStorage.setItem("uId", res.data.JSONtoken);
+      localStorage.setItem("loggedIn", true)
       setUser(res.data.User);
-      localStorage.setItem("loggedIn", res.data.JSONtoken);
+      setToHome(true)
     })
     .catch((error) => {
       if (error.response) {
         if (error.response.status === 404 || 401) {
-          errorFunction(error.response);
+          console.log(error)
         }
       }
     });

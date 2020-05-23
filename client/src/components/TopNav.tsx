@@ -13,12 +13,12 @@ export class TopNav extends Component {
               <Menu.Item className="navlinks">Home</Menu.Item>
             </Link>
 
-            <Link className="links" to="/profile">
-              <Menu.Item className="navlinks">Profile</Menu.Item>
+            <Link className="links disable" to="/profile">
+              <Menu.Item className="navlinks disable">Community</Menu.Item>
             </Link>
 
-            <Link className="links" to="/browse">
-              <Menu.Item className="navlinks">Tournaments</Menu.Item>
+            <Link className="links disable" to="/browse">
+              <Menu.Item className="navlinks ">Tournaments</Menu.Item>
             </Link>
           </Menu>
         </Container>
