@@ -53,7 +53,8 @@ class App extends React.Component {
 
     checkToken().then((res) => {
       if (res === false) {
-        return null
+        localStorage.removeItem("uId");
+        localStorage.removeItem("loggedIn");
       } else {
         this.setCurrentUser(res);
       }
