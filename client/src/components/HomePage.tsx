@@ -26,7 +26,7 @@ export const HomePage = (props: Props) => {
         <TransmogDisplay />
       </div>
 
-      <div className="home-right">
+      <div className="home-right" >
         <WowheadGuide guides={props.guides} />
       </div>
     </div>

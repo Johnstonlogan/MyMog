@@ -2,6 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: #292929 !important;
    
     
 }
@@ -14,6 +15,36 @@
 .navmenu{
     background: #292929 !important;
     border-radius: 5px 5px 0px 0px !important
+}
+.feedback{
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+ 
+}
+div[aria-label]:hover:after {
+    content: attr(aria-label);
+    padding: 4px 8px;
+    position: absolute;
+    bottom: 120%;
+    left: 65%;
+    white-space: nowrap;
+    z-index: 20;
+    background:#93278f;
+}
+div:hover {
+    position: relative;
+}
+.feedback-icon{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+   
+}
+.feedback-icon:hover{
+    cursor: pointer;
+
 }
 
 .navlinks{

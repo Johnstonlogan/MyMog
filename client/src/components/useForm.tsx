@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { TextAreaProps } from "semantic-ui-react";
+
 
 export const useForm = (callback: () => any) => {
   const [values, setValues] = useState<Object>();
@@ -15,9 +17,22 @@ export const useForm = (callback: () => any) => {
     setValues((values) => ({ ...values, [e.target.name]: e.target.value }));
   };
 
+  // handle change in select
+  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) =>{
+    e.persist();
+    setValues((values) => ({ ...values, [e.target.name]: e.target.value }));
+  }
+
+  //handle change in textarea
+  const handleTextArea = (e: React.FormEvent<HTMLTextAreaElement>, data: TextAreaProps) =>{
+    setValues((values) => ({ ...values, [data.name] : data.value }));
+  };
+
   return {
     handleChange,
     handleSubmit,
+    handleTextArea,
+    handleSelect,
     values,
   };
 };

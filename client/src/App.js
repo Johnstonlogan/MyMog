@@ -9,6 +9,8 @@ import { checkToken } from "./services/checkToken";
 import { ClassGuideArray } from "./resources/ClassGuideArray";
 import { authUser } from "./resources/userContext";
 import { getBluePosts } from "./services/bluePosts";
+import {Transmogs} from "./components/Transmogs"
+import {FeedbackForm} from "./components/FeedbackForm"
 import "./App.css";
 import { HomePage } from "./components/HomePage";
 
@@ -38,6 +40,7 @@ class App extends React.Component {
   };
 
   async componentDidMount() {
+
     let blueArray = [];
     this.setState({ guides: ClassGuideArray });
 
@@ -50,7 +53,7 @@ class App extends React.Component {
 
     checkToken().then((res) => {
       if (res === false) {
-        console.log("no user");
+        return null
       } else {
         this.setCurrentUser(res);
       }
@@ -76,6 +79,9 @@ class App extends React.Component {
 
           <Route exact path="/login">
             <Login handleError={this.setError} setUser={this.setCurrentUser} />
+          </Route>
+          <Route exact path="/feedback">
+            <FeedbackForm  />
           </Route>
           {/* Top error message, checks for error message in state if false will return null*/}
           <Route exact path="/sign-up">
@@ -108,6 +114,11 @@ class App extends React.Component {
                   <HomePage
                     blues={this.state.blues}
                     guides={this.state.guides}
+                  />
+                </Route>
+                <Route exact path="/transmogs">
+                  <Transmogs
+                
                   />
                 </Route>
               </div>
