@@ -19,7 +19,7 @@ export class TopNav extends Component {
             </Link>
 
             <Link className="links disable" to="/browse">
-              <Menu.Item className="navlinks ">Tournaments</Menu.Item>
+              <Menu.Item className="navlinks ">Tournament</Menu.Item>
             </Link>
             {window.innerWidth < 1025 ? 
             <div>

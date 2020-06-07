@@ -30,7 +30,7 @@ export const FeedbackForm = () => {
                 <li>Right click and go to inspect</li>
                 <li>Navigate to console</li>
                 <li>Look for any red error</li>
-                <li>When you send the report just describe the error</li>
+                <li>When you send the report just describe or copy and paste the error</li>
               </ol>
               <hr />
             </li>
