@@ -1,118 +1,25 @@
-body{height: 100%;}
-
-.App{
-  background-image: url(../src/images/annie-spratt-h-LcVG8W1XY-unsplash.jpg);
-  background-position: top;
-  background-repeat: repeat;
-  background-size: cover;
-  height: 100vh;
+.App {
   padding: 20px;
-  border-left: solid 2px #292929;
-  border-right: solid 2px #292929;
-  
 }
-.error-message{
+.error-message {
   background-color: rgb(238, 11, 11) !important;
   color: black !important;
 }
 
-.loader-container{
-display: flex;
- justify-content: center;
- width: 100%;
- height: 100vh;
+.loader-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
 }
-.loader{
-margin: auto auto;
-}
-@media only screen and (max-width: 425px){
-  .App{
-    padding: 0;
-  }
-  .ui.container {
-    width: 100%;
-  }
-}
-@media only screen and (max-width: 768px)  {
-  .App{
-    padding: 10px;
-  }
-
-
-  .ui.grid.container {
-    width: calc( 723px  +  2rem ) !important;
-  }
-
-  .ui.relaxed.grid.container {
-    width: calc( 723px  +  3rem ) !important;
-  }
-
-  .ui.very.relaxed.grid.container {
-    width: calc( 723px  +  5rem ) !important;
-  }
+.loader {
+  margin: auto auto;
 }
 
-@media only screen and (max-width: 1024px)  {
- 
-  .ui.container {
-    width: 950px;
-  }
-
-  .ui.grid.container {
-    width: calc( 723px  +  2rem ) !important;
-  }
-
-  .ui.relaxed.grid.container {
-    width: calc( 723px  +  3rem ) !important;
-  }
-
-  .ui.very.relaxed.grid.container {
-    width: calc( 723px  +  5rem ) !important;
-  }
-}
-
-@media only screen and (max-width: 1216px)  {
-  .App{
-    padding: 0;
-  }
-  .ui.container {
-    width: 1150px;
-  }
-
-  .ui.grid.container {
-    width: calc( 723px  +  2rem ) !important;
-  }
-
-  .ui.relaxed.grid.container {
-    width: calc( 723px  +  3rem ) !important;
-  }
-
-  .ui.very.relaxed.grid.container {
-    width: calc( 723px  +  5rem ) !important;
-  }
-}
-
-@media only screen and (min-width: 1408px)  {
-  .ui.container {
-    width: 1350px;
-  }
-
-  .ui.grid.container {
-    width: calc( 723px  +  2rem ) !important;
-  }
-
-  .ui.relaxed.grid.container {
-    width: calc( 723px  +  3rem ) !important;
-  }
-
-  .ui.very.relaxed.grid.container {
-    width: calc( 723px  +  5rem ) !important;
-  }
-}
-label{
+label {
   font-size: 17px !important;
   color: #fff !important;
 }
-input{
+input {
   margin-bottom: 15px !important;
 }

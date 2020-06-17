@@ -9,8 +9,8 @@ import { checkToken } from "./services/checkToken";
 import { ClassGuideArray } from "./resources/ClassGuideArray";
 import { authUser } from "./resources/userContext";
 import { getBluePosts } from "./services/bluePosts";
-import {Transmogs} from "./components/Transmogs"
-import {FeedbackForm} from "./components/FeedbackForm"
+import { Transmogs } from "./components/Transmogs";
+import { FeedbackForm } from "./components/FeedbackForm";
 import "./App.css";
 import { HomePage } from "./components/HomePage";
 
@@ -20,7 +20,7 @@ class App extends React.Component {
     errorMessage: "",
     blues: [],
     currentUser: {},
-    guides: []
+    guides: [],
   };
   setError = (err) => {
     this.setState({ error: true, errorMessage: err.data });
@@ -40,7 +40,6 @@ class App extends React.Component {
   };
 
   async componentDidMount() {
-
     let blueArray = [];
     this.setState({ guides: ClassGuideArray });
 
@@ -82,7 +81,7 @@ class App extends React.Component {
             <Login handleError={this.setError} setUser={this.setCurrentUser} />
           </Route>
           <Route exact path="/feedback">
-            <FeedbackForm  />
+            <FeedbackForm />
           </Route>
           {/* Top error message, checks for error message in state if false will return null*/}
           <Route exact path="/sign-up">
@@ -102,28 +101,21 @@ class App extends React.Component {
           <React.Fragment>
             <header>
               <authUser.Provider value={this.state.currentUser.username}>
-                <LogoBar  setUser={this.setCurrentUser}/>
+                <LogoBar setUser={this.setCurrentUser} />
               </authUser.Provider>
             </header>
 
-            <Container>
-              <TopNav />
-              <div className="App">
-                {/* passed blue posts array from mmo-champion */}
-                {/* passed guides array for front page mapping */}
-                <Route exact path="/home">
-                  <HomePage
-                    blues={this.state.blues}
-                    guides={this.state.guides}
-                  />
-                </Route>
-                <Route exact path="/transmogs">
-                  <Transmogs
-                
-                  />
-                </Route>
-              </div>
-            </Container>
+            {/* <TopNav /> */}
+            <div className="App">
+              {/* passed blue posts array from mmo-champion */}
+              {/* passed guides array for front page mapping */}
+              <Route exact path="/home">
+                <HomePage blues={this.state.blues} guides={this.state.guides} />
+              </Route>
+              <Route exact path="/transmogs">
+                <Transmogs />
+              </Route>
+            </div>
           </React.Fragment>
         </Switch>
       );
