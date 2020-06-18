@@ -1,9 +1,8 @@
 import React from "react";
 import { SignUp_Form as SignUpForm } from "./components/SignUp_Form";
 import { Login } from "./components/Login";
-import { TopNav } from "./components/TopNav";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { Container, Message, Loader } from "semantic-ui-react";
+import { Message, Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { checkToken } from "./services/checkToken";
 import { ClassGuideArray } from "./resources/ClassGuideArray";

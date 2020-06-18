@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import defaultAvatar from "../images/default-avatar.png";
 import "../styling/AvatarDropdown.scss";
 
@@ -27,6 +28,12 @@ export const AvatarDropdown = (props: Props) => {
           <div className="dropdown-menu__logout" onClick={() => logout()}>
             <p>Logout</p> <i className=" sign out alternate icon"></i>
           </div>
+          <Link to="/feedback">
+            <div className="dropdown-menu__logout">
+              <p>Feedback</p>
+              <i className="envelope icon"></i>
+            </div>
+          </Link>
         </div>
       ) : null}
     </div>

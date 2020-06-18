@@ -30,35 +30,35 @@ export const Login: React.FC<Props> = (props) => {
     <div>
       {toHome ? <Redirect to="/home" /> : null}
       <div className="login">
-        <div className="login-container">
-          <div className="login-logo-container">
+        <div className="login__container">
+          <div className="login__container__logo">
             <Link to="home">
-              <img alt="Mog-logo" className="login-logo" src={MogLogo} />
+              <img alt="Mog-logo" className="login__logo" src={MogLogo} />
             </Link>
           </div>
-          <Form>
-            <h1 className="login-header">Welcome Back</h1>
+          <Form className="form">
+            <h1 className="form__header">Welcome Back</h1>
             <Form.Field>
-              <label className="login-label">Email:</label>
+              <label>Email:</label>
               <input name="email" type="text" onChange={handleChange} />
             </Form.Field>
             <Form.Field>
-              <label className="login-label">Password:</label>
+              <label>Password:</label>
               <input name="password" type="password" onChange={handleChange} />
             </Form.Field>
-            <Link to="login/forgot" className="login-link">
+            <Link to="login/forgot" className="form__link">
               Forgot Your Password?
             </Link>
 
-            <div className="submit-button">
-              <Button className="login-button" primary onClick={handleSubmit}>
+            <div>
+              <Button className="form__button" primary onClick={handleSubmit}>
                 Login
               </Button>
               <hr />
               <div>
-                <div className="login-signup">
+                <div className="form__signup">
                   <p>Need an account?</p>
-                  <Link className="login-link" to="sign-up">
+                  <Link className="form__link" to="sign-up">
                     Register.
                   </Link>
                 </div>

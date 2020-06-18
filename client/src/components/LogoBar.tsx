@@ -18,7 +18,9 @@ export const LogoBar = (props: Props) => {
     <nav className="logobar">
       <div className="logobar__container">
         <div>
-          <img className="logobar__logo" alt="Mog-logo" src={MogLogo} />
+          <Link to="/home">
+            <img className="logobar__logo" alt="Mog-logo" src={MogLogo} />
+          </Link>
         </div>
         <div>
           {loggedIn === "false" || loggedIn === null ? (

@@ -39,13 +39,7 @@ export class TopNav extends Component {
             ) : null}
           </Menu>
         </Container>
-        <div className="feedback">
-          <Link to="/feedback">
-            <div aria-label="Feedback" className="feedback-icon">
-              <i className="envelope icon large"></i>
-            </div>
-          </Link>
-        </div>
+        <div className="feedback"></div>
       </div>
     );
   }
