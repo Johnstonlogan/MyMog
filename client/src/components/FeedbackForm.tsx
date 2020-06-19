@@ -14,51 +14,53 @@ export const FeedbackForm = () => {
     submitForm
   );
   return (
-    <div>
-    <div className="feedback-container">
-      <div className="feedback-left">
-        <div className="feedback-left-text">
+    <section className="feedback">
+      <div className="feedback__left">
+        <div className="feedback__left__text">
           <h1>What can we do better?</h1>
           <ul>
-            <li>
-              <span className="feedback-types">Issue: </span>If you recieved any
-              sort of error or have run across any site breaking issues please
-              let us know. Steps you can take the help us troubleshoot the issue
-              are:
+            <li className="feedback__left__text-items">
+              <span className="feedback__left__text-types">Issue: </span>If you
+              recieved any sort of error or have run across any site breaking
+              issues please let us know. Steps you can take the help us
+              troubleshoot the issue are:
               <ol>
                 <li>Recreate the issue</li>
                 <li>Right click and go to inspect</li>
                 <li>Navigate to console</li>
                 <li>Look for any red error</li>
-                <li>When you send the report just describe or copy and paste the error</li>
+                <li>
+                  When you send the report just describe or copy and paste the
+                  error
+                </li>
               </ol>
               <hr />
             </li>
-            <li>
-              <span className="feedback-types">Suggestion:</span> What ideas do
-              you have? If there are any features you would like to see be
-              implemented into the platform, let us know. We might think its a
-              great idea too and add it!
+            <li className="feedback__left__text-items">
+              <span className="feedback__left__text-types">Suggestion:</span>{" "}
+              What ideas do you have? If there are any features you would like
+              to see be implemented into the platform, let us know. We might
+              think its a great idea too and add it!
               <hr />
             </li>
-            <li>
-              <span className="feedback-types">Comment:</span> How are we doing?
-              What can we improve on? You can also add any suggestions you might
-              have to improve.
+            <li className="feedback__left__text-items">
+              <span className="feedback__left__text-types">Comment:</span> How
+              are we doing? What can we improve on? You can also add any
+              suggestions you might have to improve.
             </li>
           </ul>
-          <h1 className="feedback-support-text">Thank you for your support</h1>
+          <div className="feedback__support">Thank you for your support</div>
         </div>
       </div>
-      <div className="feedback-right">
-        <div className="feedback-right-text">
+      <div className="feedback__right">
+        <div className="feedback__right__text">
           <div className="feedback-logo-container">
             <Link to="home">
               <img alt="Mog-logo" className="feedback-logo" src={MogLogo} />
             </Link>
           </div>
           <Form>
-            <h1 className="login-header">Welcome Back</h1>
+            <h1>Welcome Back</h1>
             <Form.Field>
               <label>Feedback type:</label>
               <select name="type" onChange={handleSelect}>
@@ -78,31 +80,27 @@ export const FeedbackForm = () => {
                 rows="5"
               />
             </Form.Field>
-            <div className="submit-button">
-              <Button className="login-button" primary onClick={handleSubmit}>
-                Submit
-              </Button>
-              <hr />
-              <div>
-                <div className="login-signup">
-                  <p>No feedback?</p>
-                  <Link className="login-link" to="home">
-                    Home
-                  </Link>
-                </div>
+            <Button className="submit-button" primary onClick={handleSubmit}>
+              Submit
+            </Button>
+            <hr />
+            <div>
+              <div className="feedback__nav">
+                <p className="feedback__nav__text">No feedback?</p>
+                <Link className="feedback__nav__link" to="home">
+                  Home
+                </Link>
               </div>
             </div>
           </Form>
         </div>
       </div>
       <div className="copyright">
-          ©2004 Blizzard Entertainment, Inc. All rights reserved. World of
-          Warcraft, Warcraft and Blizzard Entertainment are trademarks or
-          registered trademarks of Blizzard Entertainment, Inc. in the U.S.
-          and/or other countries.
-        </div>
-    </div>
-    
-    </div>
+        ©2004 Blizzard Entertainment, Inc. All rights reserved. World of
+        Warcraft, Warcraft and Blizzard Entertainment are trademarks or
+        registered trademarks of Blizzard Entertainment, Inc. in the U.S. and/or
+        other countries.
+      </div>
+    </section>
   );
 };

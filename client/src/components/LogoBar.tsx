@@ -26,6 +26,12 @@ export const LogoBar = (props: Props) => {
           {loggedIn === "false" || loggedIn === null ? (
             // if not logged in show login/sign up buttons
             <React.Fragment>
+              <Link to="/feedback">
+                <i
+                  className="envelope icon large feedback-icon"
+                  title="Feedback"
+                ></i>
+              </Link>
               <Link to="/login">
                 <Button className="logobar__login">Login</Button>
               </Link>

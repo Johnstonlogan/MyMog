@@ -25,11 +25,11 @@ export const AvatarDropdown = (props: Props) => {
       </div>
       {open ? (
         <div className="dropdown-menu">
-          <div className="dropdown-menu__logout" onClick={() => logout()}>
+          <div className="dropdown-menu__item" onClick={() => logout()}>
             <p>Logout</p> <i className=" sign out alternate icon"></i>
           </div>
           <Link to="/feedback">
-            <div className="dropdown-menu__logout">
+            <div className="dropdown-menu__item">
               <p>Feedback</p>
               <i className="envelope icon"></i>
             </div>
