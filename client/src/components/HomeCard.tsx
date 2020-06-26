@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 import "../styling/HomePageStyle.scss";
 interface Content {
   text: string;
@@ -10,6 +11,7 @@ interface Props {
   content: Array<Content>;
   button: string;
   image: string;
+  link: string;
 }
 
 export const HomeCard = (props: Props) => {
@@ -32,7 +34,9 @@ export const HomeCard = (props: Props) => {
         })}
       </div>
       <div className="home-card__button">
-        <Button primary>{props.button}</Button>
+        <Link to={props.link}>
+          <Button primary>{props.button}</Button>
+        </Link>
       </div>
     </div>
   );

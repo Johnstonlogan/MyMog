@@ -8,7 +8,6 @@ export const createUser = (userInfo, errorFunction) => {
     .post(baseURL + "/user", userInfo)
     .then(() => {
       window.localStorage.setItem("loggedIn", "true");
-      console.log("logged in");
       useHistory().push("/home");
     })
     .catch((error) => {

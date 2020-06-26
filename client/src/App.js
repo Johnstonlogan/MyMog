@@ -2,7 +2,7 @@ import React from "react";
 import { SignUp_Form as SignUpForm } from "./components/SignUp_Form";
 import { Login } from "./components/Login";
 import { Switch, Route, Redirect } from "react-router-dom";
-import { Message, Loader } from "semantic-ui-react";
+import { Loader } from "semantic-ui-react";
 import { LogoBar } from "./components/LogoBar";
 import { checkToken } from "./services/checkToken";
 import { ClassGuideArray } from "./resources/ClassGuideArray";
@@ -10,6 +10,7 @@ import { authUser } from "./resources/userContext";
 import { getBluePosts } from "./services/bluePosts";
 import { Transmogs } from "./components/Transmogs";
 import { FeedbackForm } from "./components/FeedbackForm";
+import { CreateTournament } from "./components/CreateTournament";
 import "./App.css";
 import { HomePage } from "./components/HomePage";
 
@@ -20,6 +21,7 @@ class App extends React.Component {
     blues: [],
     currentUser: {},
     guides: [],
+    width: window.innerWidth,
   };
   setError = (err) => {
     this.setState({ error: true, errorMessage: err.data });
@@ -37,11 +39,16 @@ class App extends React.Component {
     }
     return true;
   };
+  updateWindowSize = () => {
+    this.setState({ width: window.innerWidth });
+  };
 
   async componentDidMount() {
     let blueArray = [];
     this.setState({ guides: ClassGuideArray });
 
+    this.updateWindowSize();
+    window.addEventListener("resize", this.updateWindowSize);
     await getBluePosts().then((res) => {
       for (let i = 0; i < 5; i++) {
         blueArray.push({ title: res[i].title, id: res[i].id });
@@ -75,41 +82,37 @@ class App extends React.Component {
         <Switch>
           {/* Redirect to /home on page load */}
           <Redirect exact from="/" to="/home" />
+          {/* everything above class=App will take over whole page, not just content below the nav bar */}
 
           <Route exact path="/login">
             <Login handleError={this.setError} setUser={this.setCurrentUser} />
           </Route>
+
           <Route exact path="/feedback">
             <FeedbackForm />
           </Route>
-          {/* Top error message, checks for error message in state if false will return null*/}
-          <Route exact path="/sign-up">
-            {this.state.error ? (
-              <Message
-                className="error-message"
-                header="Sorry there seems to be an error: "
-                content={this.state.errorMessage}
-                onDismiss={this.handleDismiss}
-              />
-            ) : null}
 
-            {/* sign up form - passed error handling function  */}
+          <Route exact path="/sign-up">
             <SignUpForm handleError={this.setError} />
           </Route>
 
+          {/* nav bar */}
           <React.Fragment>
             <header>
               <authUser.Provider value={this.state.currentUser.username}>
-                <LogoBar setUser={this.setCurrentUser} />
+                <LogoBar
+                  setUser={this.setCurrentUser}
+                  width={this.state.width}
+                />
               </authUser.Provider>
             </header>
 
-            {/* <TopNav /> */}
             <div className="App">
-              {/* passed blue posts array from mmo-champion */}
-              {/* passed guides array for front page mapping */}
               <Route exact path="/home">
                 <HomePage blues={this.state.blues} guides={this.state.guides} />
+              </Route>
+              <Route exact path="/create_tournament">
+                <CreateTournament />
               </Route>
               <Route exact path="/transmogs">
                 <Transmogs />

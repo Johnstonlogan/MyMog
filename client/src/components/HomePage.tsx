@@ -24,6 +24,7 @@ export const HomePage = () => {
           ]}
           header={"Create Tournament"}
           button={"Create Tournament"}
+          link={"/create_tournament"}
           image={create}
         />
         {/* <RecentBar blueArray={props.blues} /> */}
@@ -50,6 +51,7 @@ export const HomePage = () => {
           ]}
           header={"Join Existing Tournament"}
           button={"Join Tournament"}
+          link={"/join_tournament"}
           image={testImage}
         />
       </div>

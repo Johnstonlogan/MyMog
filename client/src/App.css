@@ -1,11 +1,13 @@
 .App {
-  padding: 20px;
+  padding: 0 30px;
 }
 .error-message {
   background-color: rgb(238, 11, 11) !important;
   color: black !important;
 }
-
+.bg-dark {
+  background-color: #252525af;
+}
 .loader-container {
   display: flex;
   justify-content: center;
