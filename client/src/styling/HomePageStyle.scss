@@ -48,6 +48,7 @@
     justify-content: space-evenly;
     height: 200px;
     text-align: center;
+    padding: 20px;
     &__items {
       display: flex;
       flex-direction: row;
@@ -83,5 +84,35 @@
     width: 90%;
     margin: 0 auto;
     margin-bottom: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .home-card {
+    &__content {
+      height: 225px;
+    }
+    &__bg-image {
+      height: 375px;
+    }
+    &__content {
+      &__text {
+        font-size: 0.9em;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 425px) {
+  .home-card {
+    &__content {
+      height: 250px;
+    }
+    &__bg-image {
+      height: 325px;
+    }
+    &__content {
+      &__text {
+        font-size: 0.8em;
+      }
+    }
   }
 }

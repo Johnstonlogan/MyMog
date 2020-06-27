@@ -63,8 +63,8 @@ export const FeedbackForm = () => {
             <h1>Welcome Back</h1>
             <Form.Field>
               <label>Feedback type:</label>
-              <select name="type" onChange={handleSelect}>
-                <option value="none" selected disabled hidden>
+              <select name="type" onChange={handleSelect} defaultValue="none">
+                <option value="none" disabled hidden>
                   Select an Option
                 </option>
                 <option value="issue">Issue</option>

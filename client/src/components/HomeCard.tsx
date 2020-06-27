@@ -28,7 +28,7 @@ export const HomeCard = (props: Props) => {
           return (
             <div className="home-card__content__items" key={i}>
               <i className={item.icon}></i>
-              <div key={i}>{item.text}</div>
+              <div className="home-card__content__text" key={i}>{item.text}</div>
             </div>
           );
         })}

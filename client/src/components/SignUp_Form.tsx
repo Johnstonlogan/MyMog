@@ -26,37 +26,41 @@ export const SignUp_Form: React.FC<Props> = (props) => {
   let { values, handleSubmit, handleChange } = useForm(createNewUser);
 
   return (
-    <div className="signup">
-      <div className="signup-container">
-        <div className="signup-logo-container">
+    <div className="register">
+      <div className="register__container">
+        <div className="register__logo">
           <Link to="home">
-            <img alt="Mog-logo" className="signup-logo" src={MogLogo} />
+            <img
+              alt="Mog-logo"
+              className="register__logo__image"
+              src={MogLogo}
+            />
           </Link>
         </div>
         <Form>
-          <h1 className="signup-header">Create An Account</h1>
+          <h1 className="register__header">Create An Account</h1>
           <Form.Field>
-            <label className="signup-label">Username:</label>
+            <label>Username:</label>
             <input name="username" type="text" onChange={handleChange} />
           </Form.Field>
 
           <Form.Field>
-            <label className="signup-label">Email:</label>
+            <label>Email:</label>
             <input name="email" type="email" onChange={handleChange} />
           </Form.Field>
           <Form.Field>
-            <label className="signup-label">Password:</label>
+            <label>Password:</label>
             <input name="password" type="password" onChange={handleChange} />
           </Form.Field>
 
-          <Button className="signup-button" primary onClick={handleSubmit}>
+          <Button className="register__button" primary onClick={handleSubmit}>
             Create Account
           </Button>
           <hr />
           <div>
-            <p className="signup-login">
+            <p className="register__reroute">
               Already have an account?{" "}
-              <Link className="signupForm-link" to="/login">
+              <Link className="register__link" to="/login">
                 Login.
               </Link>
             </p>
