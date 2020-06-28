@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import MogLogo from "../images/mog.svg";
+import { Logo } from "../CommonComponents/Logo";
 import { authUser } from "../resources/userContext";
-import { LogoBarMobile } from "./LogoBarMobile";
+import { LogoBarMobile } from "./LogobarMobile/LogoBarMobile";
+import { Icon } from "semantic-ui-react";
 import "../styling/LogoBar.scss";
 import { AvatarDropdown } from "./AvatarDropdown";
 
@@ -20,7 +21,7 @@ export const LogoBar = (props: Props) => {
     <nav className="logobar">
       <div className="logobar__container">
         <Link to="/home">
-          <img className="logobar__logo" alt="Mog-logo" src={MogLogo} />
+          <Logo styling="logobar__logo" />
         </Link>
 
         {props.width >= 768 ? (
@@ -30,10 +31,11 @@ export const LogoBar = (props: Props) => {
 
               <React.Fragment>
                 <Link to="/feedback">
-                  <i
-                    className="envelope icon large feedback-icon"
-                    title="Feedback"
-                  ></i>
+                  <Icon
+                    name="envelope"
+                    size="large"
+                    className="feedback-icon"
+                  />
                 </Link>
                 <Link to="/login">
                   <Button className="logobar__login">Login</Button>

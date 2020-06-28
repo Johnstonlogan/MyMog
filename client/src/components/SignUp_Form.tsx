@@ -4,7 +4,7 @@ import { createUser } from "../services/userServices";
 import "../styling/SignUpStyle.scss";
 import { Link } from "react-router-dom";
 import { Button, Form } from "semantic-ui-react";
-import MogLogo from "../images/mog.svg";
+import { Logo } from "../CommonComponents/Logo";
 
 interface User {
   username: string;
@@ -30,11 +30,7 @@ export const SignUp_Form: React.FC<Props> = (props) => {
       <div className="register__container">
         <div className="register__logo">
           <Link to="home">
-            <img
-              alt="Mog-logo"
-              className="register__logo__image"
-              src={MogLogo}
-            />
+            <Logo styling="register__logo__image" />
           </Link>
         </div>
         <Form>
