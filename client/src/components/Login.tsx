@@ -1,14 +1,17 @@
 import React, { useState } from "react";
-import { Button } from "semantic-ui-react";
 import { useForm } from "./useForm";
 import { login } from "../services/loginServices";
 import "../styling/LoginStyle.scss";
 import { Redirect } from "react-router-dom";
-import { FormLink } from "../CommonComponents/Forms/FormLink";
-import { FormContainer } from "../CommonComponents/Forms/FormContainer";
-import { FormHeader } from "../CommonComponents/Forms/FormHeader";
-import { FormContent } from "../CommonComponents/Forms/FormContent";
-import { FormInput } from "../CommonComponents/Forms/FormInput";
+import {
+  FormInput,
+  FormContent,
+  FormHeader,
+  FormContainer,
+  FormLink,
+  FormButton,
+  FormReroute,
+} from "../CommonComponents/Forms/Form";
 import { CopyRight } from "../FeatureComponents/CopyRight";
 
 interface User {
@@ -18,7 +21,7 @@ interface User {
 interface Props {
   values: User;
   handleError: void;
-  setUser: void;
+  setUser: () => void;
 }
 
 export const Login = (props: Props) => {
@@ -39,7 +42,7 @@ export const Login = (props: Props) => {
             <FormInput
               label="Email"
               name="email"
-              type="text"
+              type="email"
               change={handleChange}
             />
             <FormInput
@@ -49,14 +52,12 @@ export const Login = (props: Props) => {
               change={handleChange}
             />
             <FormLink to="login/forgot" link=" Forgot Your Password?" />
-            <Button className="form__button" primary onClick={handleSubmit}>
-              Login
-            </Button>
+            <FormButton submit={handleSubmit} button="Login" />
+
             <hr />
-            <div className="form__signup">
-              <p>Need an account?</p>
+            <FormReroute text="Need an account?">
               <FormLink to="sign-up" link="Register" />
-            </div>
+            </FormReroute>
           </FormContent>
         </FormContainer>
         <CopyRight />

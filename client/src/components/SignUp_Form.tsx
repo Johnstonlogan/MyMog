@@ -2,12 +2,15 @@ import React from "react";
 import { useForm } from "./useForm";
 import { createUser } from "../services/userServices";
 import "../styling/SignUpStyle.scss";
-import { Button } from "semantic-ui-react";
-import { FormLink } from "../CommonComponents/Forms/FormLink";
-import { FormContainer } from "../CommonComponents/Forms/FormContainer";
-import { FormHeader } from "../CommonComponents/Forms/FormHeader";
-import { FormContent } from "../CommonComponents/Forms/FormContent";
-import { FormInput } from "../CommonComponents/Forms/FormInput";
+import {
+  FormInput,
+  FormContent,
+  FormHeader,
+  FormContainer,
+  FormLink,
+  FormButton,
+  FormReroute,
+} from "../CommonComponents/Forms/Form";
 import { CopyRight } from "../FeatureComponents/CopyRight";
 
 interface User {
@@ -21,9 +24,7 @@ interface Props {
 }
 
 export const SignUp_Form = (props: Props) => {
-  // create a new user, props.handleError is for any error messages and will be located
-  // at app.js level
-  const createNewUser = (): any => {
+  const createNewUser = (): void => {
     createUser(values, props.handleError);
   };
 
@@ -46,23 +47,17 @@ export const SignUp_Form = (props: Props) => {
             type="email"
             change={handleChange}
           />
-
           <FormInput
             label="Password"
             name="password"
             type="password"
             change={handleChange}
           />
-
-          <Button className="register__button" primary onClick={handleSubmit}>
-            Create Account
-          </Button>
+          <FormButton submit={handleSubmit} button="Create Account" />
           <hr />
-          <div>
-            <p className="register__reroute">
-              Already have an account? <FormLink to="/login" link="Login" />
-            </p>
-          </div>
+          <FormReroute text="Already have an account?">
+            <FormLink to="/login" link="Login" />
+          </FormReroute>
         </FormContent>
       </FormContainer>
       <CopyRight />

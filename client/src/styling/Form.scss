@@ -45,9 +45,10 @@
   padding: 5px 25px 25px 25px;
 
   &__link {
-    color: #93278f !important;
+    color: #fbae3e !important;
+
     &:hover {
-      color: #fbae3e !important;
+      color: #93278f !important;
     }
   }
 
@@ -57,6 +58,9 @@
     font-size: 18px !important;
     margin-bottom: 15px !important;
     margin-top: 15px !important;
+    &:hover {
+      border: solid #fff 1px;
+    }
   }
   &__signup {
     color: #fff;
