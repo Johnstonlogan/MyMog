@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import { Button, Form } from "semantic-ui-react";
+import { Button } from "semantic-ui-react";
 import { useForm } from "./useForm";
 import { login } from "../services/loginServices";
-import { Link } from "react-router-dom";
 import "../styling/LoginStyle.scss";
 import { Redirect } from "react-router-dom";
+import { FormLink } from "../CommonComponents/Forms/FormLink";
 import { FormContainer } from "../CommonComponents/Forms/FormContainer";
 import { FormHeader } from "../CommonComponents/Forms/FormHeader";
 import { FormContent } from "../CommonComponents/Forms/FormContent";
 import { FormInput } from "../CommonComponents/Forms/FormInput";
+import { CopyRight } from "../FeatureComponents/CopyRight";
 
 interface User {
   email: string;
@@ -47,29 +48,18 @@ export const Login = (props: Props) => {
               type="password"
               change={handleChange}
             />
-
-            <Link to="login/forgot" className="form__link">
-              Forgot Your Password?
-            </Link>
-
+            <FormLink to="login/forgot" link=" Forgot Your Password?" />
             <Button className="form__button" primary onClick={handleSubmit}>
               Login
             </Button>
             <hr />
             <div className="form__signup">
               <p>Need an account?</p>
-              <Link className="form__link" to="sign-up">
-                Register.
-              </Link>
+              <FormLink to="sign-up" link="Register" />
             </div>
           </FormContent>
         </FormContainer>
-        <div className="copyright">
-          ©2004 Blizzard Entertainment, Inc. All rights reserved. World of
-          Warcraft, Warcraft and Blizzard Entertainment are trademarks or
-          registered trademarks of Blizzard Entertainment, Inc. in the U.S.
-          and/or other countries.
-        </div>
+        <CopyRight />
       </div>
     </div>
   );

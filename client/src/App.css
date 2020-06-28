@@ -25,3 +25,9 @@ label {
 input {
   margin-bottom: 15px !important;
 }
+.copyright {
+  position: relative;
+  margin-top: 20px;
+  color: #fff;
+  opacity: 0.5;
+}

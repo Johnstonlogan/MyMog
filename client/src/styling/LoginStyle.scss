@@ -5,8 +5,6 @@
   background-size: cover;
   align-items: center;
   display: flex;
-}
-.copyright {
-  color: #fff;
-  opacity: 0.5;
+  flex-direction: column;
+  justify-content: center;
 }
