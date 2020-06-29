@@ -1,5 +1,5 @@
 import React from "react";
-import "../styling/CreateTournament.scss";
+import "../../styling/CreateTournament.scss";
 import { TournamentCard } from "./TournamentCard";
 export const CreateTournament = () => {
   return (

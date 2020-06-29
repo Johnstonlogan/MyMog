@@ -1,18 +1,17 @@
 import React from "react";
-import { SignUp_Form as SignUpForm } from "./components/SignUp_Form";
-import { Login } from "./components/Login";
+import { SignUp_Form as SignUpForm } from "./Pages/SignUp_Form";
+import { Login } from "./Pages/Login";
 import { Switch, Route, Redirect } from "react-router-dom";
 import { Loader } from "semantic-ui-react";
-import { LogoBar } from "./components/LogoBar";
+import { LogoBar } from "./FeatureComponents/TopNav/LogoBar";
 import { checkToken } from "./services/checkToken";
 import { ClassGuideArray } from "./resources/ClassGuideArray";
 import { authUser } from "./resources/userContext";
 import { getBluePosts } from "./services/bluePosts";
-import { Transmogs } from "./components/Transmogs";
-import { FeedbackForm } from "./components/FeedbackForm";
-import { CreateTournament } from "./components/CreateTournament";
+import { FeedbackForm } from "./Pages/FeedbackForm";
+import { CreateTournament } from "./Pages/Tournament/CreateTournament";
 import "./App.css";
-import { HomePage } from "./components/HomePage";
+import { HomePage } from "./Pages/Home/HomePage";
 
 class App extends React.Component {
   state = {
@@ -113,9 +112,6 @@ class App extends React.Component {
               </Route>
               <Route exact path="/create_tournament">
                 <CreateTournament />
-              </Route>
-              <Route exact path="/transmogs">
-                <Transmogs />
               </Route>
             </div>
           </React.Fragment>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import defaultAvatar from "../images/default-avatar.png";
-import "../styling/AvatarDropdown.scss";
+import defaultAvatar from "../../images/default-avatar.png";
+import "../../styling/AvatarDropdown.scss";
 
 interface Props {
   setUser: any;

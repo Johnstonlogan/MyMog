@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Icon } from "semantic-ui-react";
 import { MobileMenuContent } from "./MobileMenuContent";
-import "../../styling/LogoBar.scss";
+import "../../../styling/LogoBar.scss";
 
 export const LogoBarMobile = () => {
   const [menuOpen, setMenuOpen] = useState(false);

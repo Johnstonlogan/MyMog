@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import "../styling/HomePageStyle.scss";
+import "../../styling/HomePageStyle.scss";
 interface Content {
   text: string;
   icon: string;
@@ -28,7 +28,9 @@ export const HomeCard = (props: Props) => {
           return (
             <div className="home-card__content__items" key={i}>
               <i className={item.icon}></i>
-              <div className="home-card__content__text" key={i}>{item.text}</div>
+              <div className="home-card__content__text" key={i}>
+                {item.text}
+              </div>
             </div>
           );
         })}

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Icon } from "semantic-ui-react";
-import "../../styling/LogoBar.scss";
+import "../../../styling/LogoBar.scss";
 
 export const MobileMenuContent = () => {
   return (
