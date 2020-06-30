@@ -2,3 +2,9 @@ MyMog is an application targeted towards World Of Warcraft transmog collectors.
 
 MyMog allows user to host/participate in community driven transmog tournaments. 
 
+Running this should be as simple as making your way into the client directory and npm start, assuming you've installed all dependencies. 
+
+
+MyMog is built using Typescript/React for all major components. This started off as more of a learning (typescript: TS) tool but TS has become extremely nice to use the more I learn it. 
+Something I’ve been focusing on is React composability, really making sure that each component I build is something reusable throughout the whole project. This is something I 
+learned to focus on after building quite a few components already so some may still be in the process of being refactored.
