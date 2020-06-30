@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "../resources/useForm";
 import { createUser } from "../services/userServices";
-import "../styling/SignUpStyle.scss";
 import {
   FormInput,
   FormContent,
@@ -11,6 +10,8 @@ import {
   FormButton,
   FormReroute,
 } from "../CommonComponents/Forms/Form";
+import backgroud from "../images/WoWScrnShot_011220_005800.jpg";
+import { BgImageContainer } from "../FeatureComponents/BgImageContainer";
 import { CopyRight } from "../FeatureComponents/CopyRight";
 
 interface User {
@@ -31,7 +32,7 @@ export const SignUp_Form = (props: Props) => {
   let { values, handleSubmit, handleChange } = useForm(createNewUser);
 
   return (
-    <div className="register">
+    <BgImageContainer image={backgroud}>
       <FormContainer logo={true}>
         <FormContent>
           <FormHeader header="Create An Account" />
@@ -61,6 +62,6 @@ export const SignUp_Form = (props: Props) => {
         </FormContent>
       </FormContainer>
       <CopyRight />
-    </div>
+    </BgImageContainer>
   );
 };

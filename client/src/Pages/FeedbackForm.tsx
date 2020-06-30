@@ -66,7 +66,6 @@ export const FeedbackForm = () => {
         <FormContainer logo={true}>
           <FormContent>
             <FormHeader header="What can we do?" />
-
             <FormSelect change={handleSelect} label="Feedback type">
               <option value="issue">Issue</option>
               <option value="suggestion">Suggestion</option>
@@ -78,9 +77,7 @@ export const FeedbackForm = () => {
               placeholder="Tell us more"
               rows={5}
             />
-
             <FormButton submit={handleSubmit} button="Submit" />
-
             <hr />
             <FormReroute text="No Feedback?">
               <FormLink link="Home" to="/home" />
