@@ -1,5 +1,6 @@
 import React from "react";
 import { TextArea, TextAreaProps } from "semantic-ui-react";
+import { Layout } from "../Layout";
 import "../../styling/Form.scss";
 interface Props {
   change: (
@@ -13,7 +14,7 @@ interface Props {
 
 export const FormTextArea = (props: Props) => {
   return (
-    <div>
+    <Layout width="full" margin="y1">
       <TextArea
         className="form__textarea"
         onChange={props.change}
@@ -21,6 +22,6 @@ export const FormTextArea = (props: Props) => {
         placeholder={props.placeholder}
         rows={props.rows}
       />
-    </div>
+    </Layout>
   );
 };

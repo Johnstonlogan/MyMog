@@ -27,9 +27,8 @@ export const FeedbackForm = () => {
       <div className="feedback__forms">
         <div className="feedback__left">
           <div className="feedback__left__text">
-            <Layout padding={"x1"}>
-              <h1>What can we do better?</h1>
-            </Layout>
+            <h1>What can we do better?</h1>
+
             <ul>
               <li className="feedback__left__text-items">
                 <span className="feedback__left__text-types">Issue: </span>If
@@ -66,25 +65,29 @@ export const FeedbackForm = () => {
         </div>
 
         <FormContainer logo={true}>
-          <FormContent>
-            <FormHeader header="What can we do?" />
-            <FormSelect change={handleSelect} label="Feedback type">
-              <option value="issue">Issue</option>
-              <option value="suggestion">Suggestion</option>
-              <option value="comment">Comment</option>
-            </FormSelect>
-            <FormTextArea
-              change={handleTextArea}
-              name="content"
-              placeholder="Tell us more"
-              rows={5}
-            />
-            <FormButton submit={handleSubmit} button="Submit" />
-            <hr />
-            <FormReroute text="No Feedback?">
-              <FormLink link="Home" to="/home" />
-            </FormReroute>
-          </FormContent>
+          <Layout padding={2}>
+            <FormContent>
+              <FormHeader header="What can we do?" />
+              <FormSelect change={handleSelect} label="Feedback type">
+                <option value="issue">Issue</option>
+                <option value="suggestion">Suggestion</option>
+                <option value="comment">Comment</option>
+              </FormSelect>
+              <FormTextArea
+                change={handleTextArea}
+                name="content"
+                placeholder="Tell us more"
+                rows={5}
+              />
+              <Layout margin={"y2"}>
+                <FormButton submit={handleSubmit} button="Submit" />
+              </Layout>
+              <hr />
+              <FormReroute text="No Feedback?">
+                <FormLink link="Home" to="/home" />
+              </FormReroute>
+            </FormContent>
+          </Layout>
         </FormContainer>
       </div>
       <CopyRight />

@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "semantic-ui-react";
+import { Layout } from "../../CommonComponents/Layout";
 
 interface Props {
   header: string;
@@ -20,11 +21,11 @@ export const TournamentCard = (props: Props) => {
           );
         })}
       </ul>
-      <div className="tournament__card__button-group">
+      <Layout width="full" flex={true} justify="center" padding={0.5}>
         <Button className="tournament__card__button" primary>
           {props.button}
         </Button>
-      </div>
+      </Layout>
     </div>
   );
 };

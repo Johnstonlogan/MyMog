@@ -1,39 +1,136 @@
-.pad {
-  &-1 {
-    padding: 10px;
+.ly {
+  &-pd {
+    &-1 {
+      padding: 10px;
+    }
+    &-2 {
+      padding: 20px;
+    }
+    &-05 {
+      padding: 5px;
+    }
+    &-x-1 {
+      padding: 0 10px;
+    }
+    &-x-2 {
+      padding: 0 20px;
+    }
+    &-x-05 {
+      padding: 0 5px;
+    }
+    &-y-1 {
+      padding: 10px 0;
+    }
+    &-y-2 {
+      padding: 20px 0;
+    }
+    &-y-05 {
+      padding: 5px 0;
+    }
   }
-  &-2 {
-    padding: 20px;
+  &-mg {
+    &-1 {
+      margin: 10px;
+    }
+    &-2 {
+      margin: 20px;
+    }
+    &-05 {
+      margin: 5px;
+    }
+    &-x-1 {
+      margin: 0 10px;
+    }
+    &-x-2 {
+      margin: 0 20px;
+    }
+    &-x-05 {
+      margin: 0 5px;
+    }
+    &-y-1 {
+      margin: 10px 0;
+    }
+    &-y-2 {
+      margin: 20px 0;
+    }
+    &-y-05 {
+      margin: 5px 0;
+    }
   }
-  &-05 {
-    padding: 5px;
+  &-flex {
+    display: flex;
+    &-col {
+      flex-direction: column;
+    }
+    &-row {
+      flex-direction: row;
+    }
   }
-  &-x-1 {
-    padding: 0 10px;
+  &-x {
+    &-pd {
+      &-1 {
+        padding: 0 10px;
+      }
+      &-2 {
+        padding: 0 20px;
+      }
+      &-05 {
+        padding: 0 5px;
+      }
+    }
+    &-mg {
+      &-1 {
+        margin: 0 10px;
+      }
+      &-2 {
+        margin: 0 20px;
+      }
+      &-05 {
+        margin: 0 5px;
+      }
+    }
   }
-  &-x-2 {
-    padding: 0 20px;
+  &-y {
+    &-pd {
+      &-1 {
+        padding: 10px 0;
+      }
+      &-2 {
+        padding: 20px 0;
+      }
+      &-05 {
+        padding: 5px 0;
+      }
+    }
+    &-mg {
+      &-1 {
+        margin: 10px 0;
+      }
+      &-2 {
+        margin: 20px 0;
+      }
+      &-05 {
+        margin: 5px 0;
+      }
+    }
   }
-  &-x-05 {
-    padding: 0 5px;
+  &-w {
+    &-full {
+      width: 100%;
+    }
   }
-}
-
-.pad-y-1 {
-  padding: 10px 0;
-}
-.pad-y-2 {
-  padding: 20px 0;
-}
-.pad-y-05 {
-  padding: 5px 0;
-}
-.mar-1 {
-  margin: 10px;
-}
-.mar-2 {
-  margin: 20px;
-}
-.mar-05 {
-  margin: 5px;
+  &-justify {
+    &-center {
+      justify-content: center;
+    }
+    &-between {
+      justify-content: space-between;
+    }
+    &-evenly {
+      justify-content: space-evenly;
+    }
+    &-around {
+      justify-content: space-around;
+    }
+  }
 }
