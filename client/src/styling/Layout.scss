@@ -1,0 +1,39 @@
+.pad {
+  &-1 {
+    padding: 10px;
+  }
+  &-2 {
+    padding: 20px;
+  }
+  &-05 {
+    padding: 5px;
+  }
+  &-x-1 {
+    padding: 0 10px;
+  }
+  &-x-2 {
+    padding: 0 20px;
+  }
+  &-x-05 {
+    padding: 0 5px;
+  }
+}
+
+.pad-y-1 {
+  padding: 10px 0;
+}
+.pad-y-2 {
+  padding: 20px 0;
+}
+.pad-y-05 {
+  padding: 5px 0;
+}
+.mar-1 {
+  margin: 10px;
+}
+.mar-2 {
+  margin: 20px;
+}
+.mar-05 {
+  margin: 5px;
+}

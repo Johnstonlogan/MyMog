@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "../resources/useForm";
-
+import { Layout } from "../CommonComponents/Layout";
 import { submitFeedback } from "../services/submitFeedback";
 import { CopyRight } from "../FeatureComponents/CopyRight";
 import {
@@ -27,7 +27,9 @@ export const FeedbackForm = () => {
       <div className="feedback__forms">
         <div className="feedback__left">
           <div className="feedback__left__text">
-            <h1>What can we do better?</h1>
+            <Layout padding={"x1"}>
+              <h1>What can we do better?</h1>
+            </Layout>
             <ul>
               <li className="feedback__left__text-items">
                 <span className="feedback__left__text-types">Issue: </span>If
