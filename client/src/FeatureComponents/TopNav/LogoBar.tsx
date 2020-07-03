@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
-import { Button } from "semantic-ui-react";
+// import { Button } from "semantic-ui-react";
+import { Button } from "../../CommonComponents/Button";
 import { Link } from "react-router-dom";
 import { Logo } from "../../CommonComponents/Logo";
 import { authUser } from "../../resources/userContext";
@@ -7,6 +8,7 @@ import { LogoBarMobile } from "./LogobarMobile/LogoBarMobile";
 import { Icon } from "semantic-ui-react";
 import "../../styling/LogoBar.scss";
 import { AvatarDropdown } from "./AvatarDropdown";
+import { Layout } from "../../CommonComponents/Layout";
 
 interface Props {
   setUser: void;
@@ -25,7 +27,7 @@ export const LogoBar = (props: Props) => {
         </Link>
 
         {props.width >= 768 ? (
-          <div>
+          <Layout flex={true} flexDirection="row" align="center">
             {loggedIn === "false" || loggedIn === null ? (
               // if not logged in show login/sign up buttons
 
@@ -37,13 +39,14 @@ export const LogoBar = (props: Props) => {
                     className="feedback-icon"
                   />
                 </Link>
-                <Link to="/login">
-                  <Button className="logobar__login">Login</Button>
-                </Link>
+                <Layout margin="x2">
+                  <Link to="/login">
+                    <Button button="Login" primary={false} />
+                  </Link>
+                </Layout>
+
                 <Link to="/sign-up">
-                  <Button className="logobar__signup" primary>
-                    Sign Up
-                  </Button>
+                  <Button button="Sign up" primary={true} />
                 </Link>
               </React.Fragment>
             ) : (
@@ -55,7 +58,7 @@ export const LogoBar = (props: Props) => {
                 </div>
               </React.Fragment>
             )}
-          </div>
+          </Layout>
         ) : (
           <LogoBarMobile />
         )}

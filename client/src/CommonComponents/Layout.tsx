@@ -12,6 +12,7 @@ interface Props {
   width?: string;
   height?: string;
   justify?: string;
+  align?: string;
 }
 // for padding all around send padding={NUMBER} must be a number 1,2 or 0.5
 // for padding on x or y axis send padding={"x1"} x1, x2,x.5 and y1, y2,y.5

@@ -1,4 +1,4 @@
-.ly {
+.my {
   &-pd {
     &-1 {
       padding: 10px;
@@ -65,6 +65,17 @@
       }
       &-05 {
         margin-bottom: 5px;
+      }
+    }
+    &-t {
+      &-1 {
+        margin-top: 10px;
+      }
+      &-2 {
+        margin-top: 20px;
+      }
+      &-05 {
+        margin-top: 5px;
       }
     }
   }
@@ -147,6 +158,17 @@
     }
     &-around {
       justify-content: space-around;
+    }
+  }
+  &-align {
+    &-center {
+      align-items: center;
+    }
+    &-flex-end {
+      align-items: flex-end;
+    }
+    &-flex-start {
+      align-items: flex-start;
     }
   }
 }
