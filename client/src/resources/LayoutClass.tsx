@@ -6,6 +6,7 @@ interface Values {
   x?: string;
   y?: string;
   width?: string;
+  height?: string;
   justify?: string;
 }
 
@@ -68,6 +69,15 @@ export const LayoutClass: any = (values: Values) => {
     case "y.5":
       layout.push("ly-mg-y-05");
       break;
+    case "b1":
+      layout.push("ly-mg-b-1");
+      break;
+    case "b2":
+      layout.push("ly-mg-b-2");
+      break;
+    case "b.5":
+      layout.push("ly-mg-b-05");
+      break;
   }
   switch (values.flex) {
     case true:
@@ -124,6 +134,11 @@ export const LayoutClass: any = (values: Values) => {
   switch (values.width) {
     case "full":
       layout.push("ly-w-full");
+      break;
+  }
+  switch (values.height) {
+    case "full":
+      layout.push("ly-h-full");
       break;
   }
   switch (values.justify) {

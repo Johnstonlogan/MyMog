@@ -13,6 +13,7 @@ import {
 import backgroud from "../images/WoWScrnShot_011220_005800.jpg";
 import { BgImageContainer } from "../FeatureComponents/BgImageContainer";
 import { CopyRight } from "../FeatureComponents/CopyRight";
+import { Layout } from "../CommonComponents/Layout";
 
 interface User {
   username: string;
@@ -34,32 +35,38 @@ export const SignUp_Form = (props: Props) => {
   return (
     <BgImageContainer image={backgroud}>
       <FormContainer logo={true}>
-        <FormContent>
-          <FormHeader header="Create An Account" />
-          <FormInput
-            label="Username"
-            name="username"
-            type="text"
-            change={handleChange}
-          />
-          <FormInput
-            label="Email"
-            name="email"
-            type="email"
-            change={handleChange}
-          />
-          <FormInput
-            label="Password"
-            name="password"
-            type="password"
-            change={handleChange}
-          />
-          <FormButton submit={handleSubmit} button="Create Account" />
-          <hr />
-          <FormReroute text="Already have an account?">
-            <FormLink to="/login" link="Login" />
-          </FormReroute>
-        </FormContent>
+        <Layout padding={2}>
+          <FormContent>
+            <FormHeader header="Create An Account" />
+            <FormInput
+              label="Username"
+              name="username"
+              type="text"
+              change={handleChange}
+            />
+            <FormInput
+              label="Email"
+              name="email"
+              type="email"
+              change={handleChange}
+            />
+            <FormInput
+              label="Password"
+              name="password"
+              type="password"
+              change={handleChange}
+            />
+            <Layout margin="y1">
+              <FormButton submit={handleSubmit} button="Create Account" />
+            </Layout>
+            <hr />
+            <Layout margin="y1">
+              <FormReroute text="Already have an account?">
+                <FormLink to="/login" link="Login" />
+              </FormReroute>
+            </Layout>
+          </FormContent>
+        </Layout>
       </FormContainer>
       <CopyRight />
     </BgImageContainer>

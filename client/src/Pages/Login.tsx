@@ -14,6 +14,7 @@ import {
 import background from "../images/Test-background.jpg";
 import { BgImageContainer } from "../FeatureComponents/BgImageContainer";
 import { CopyRight } from "../FeatureComponents/CopyRight";
+import { Layout } from "../CommonComponents/Layout";
 
 interface User {
   email: string;
@@ -37,27 +38,32 @@ export const Login = (props: Props) => {
     <BgImageContainer image={background}>
       {toHome ? <Redirect to="/home" /> : null}
       <FormContainer logo={true}>
-        <FormHeader header="Welcome back" />
-        <FormContent>
-          <FormInput
-            label="Email"
-            name="email"
-            type="email"
-            change={handleChange}
-          />
-          <FormInput
-            label="Password"
-            name="password"
-            type="password"
-            change={handleChange}
-          />
-          <FormLink to="login/forgot" link=" Forgot Your Password?" />
-          <FormButton submit={handleSubmit} button="Login" />
-          <hr />
-          <FormReroute text="Need an account?">
-            <FormLink to="sign-up" link="Register" />
-          </FormReroute>
-        </FormContent>
+        <Layout padding={2} height="full" flex={true} flexDirection="col">
+          <FormHeader header="Welcome back" />
+
+          <FormContent>
+            <FormInput
+              label="Email"
+              name="email"
+              type="email"
+              change={handleChange}
+            />
+            <FormInput
+              label="Password"
+              name="password"
+              type="password"
+              change={handleChange}
+            />
+            <FormLink to="login/forgot" link=" Forgot Your Password?" />
+            <Layout margin="y1">
+              <FormButton submit={handleSubmit} button="Login" />
+            </Layout>
+            <hr />
+            <FormReroute text="Need an account?">
+              <FormLink to="sign-up" link="Register" />
+            </FormReroute>
+          </FormContent>
+        </Layout>
       </FormContainer>
       <CopyRight />
     </BgImageContainer>
