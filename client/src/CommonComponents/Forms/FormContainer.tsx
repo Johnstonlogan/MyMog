@@ -13,7 +13,7 @@ export const FormContainer: FunctionComponent<Props> = (props) => {
           <Logo styling="form__logo" />
         </Link>
       ) : null}
-      {props.children};
+      {props.children}
     </div>
   );
 };

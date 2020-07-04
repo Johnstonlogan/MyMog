@@ -35,7 +35,7 @@ export const SignUp_Form = (props: Props) => {
   return (
     <BgImageContainer image={backgroud}>
       <FormContainer logo={true}>
-        <Layout padding={2}>
+        <Layout x="p2" y="p1">
           <FormContent>
             <FormHeader header="Create An Account" />
             <FormInput
@@ -60,7 +60,7 @@ export const SignUp_Form = (props: Props) => {
               <FormButton submit={handleSubmit} button="Create Account" />
             </Layout>
             <hr />
-            <Layout margin="y1">
+            <Layout margin={"t1"} padding="y1">
               <FormReroute text="Already have an account?">
                 <FormLink to="/login" link="Login" />
               </FormReroute>

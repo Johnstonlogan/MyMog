@@ -14,7 +14,7 @@ import {
   FormTextArea,
 } from "../CommonComponents/Forms/Form";
 import { BgImageContainer } from "../FeatureComponents/BgImageContainer";
-import bgimage from "../images/feedbackimage.jpg";
+import bgimage from "../images/Feedback.jpg";
 import "../styling/FeedbackStyle.scss";
 
 export const FeedbackForm = () => {
@@ -28,15 +28,17 @@ export const FeedbackForm = () => {
     <BgImageContainer image={bgimage}>
       <Layout flex={true} flexDirection="row" height="full" width="full">
         <FormContainer logo={true}>
-          <Layout padding={2}>
+          <Layout x="p2" y="p1">
             <FormContent>
-              <FormHeader header="What can we do?" />
+              <Layout margin="b1">
+                <FormHeader header="What can we do?" />
+              </Layout>
               <FormSelect change={handleSelect} label="Feedback type">
                 <option value="issue">Issue</option>
                 <option value="suggestion">Suggestion</option>
                 <option value="comment">Comment</option>
               </FormSelect>
-              <Layout margin="y2">
+              <Layout margin="y1">
                 <FormTextArea
                   change={handleTextArea}
                   name="content"
@@ -48,9 +50,11 @@ export const FeedbackForm = () => {
                 <FormButton submit={handleSubmit} button="Submit" />
               </Layout>
               <hr />
-              <FormReroute text="No Feedback?">
-                <FormLink link="Home" to="/home" />
-              </FormReroute>
+              <Layout padding="y1" margin="t1">
+                <FormReroute text="No Feedback?">
+                  <FormLink link="Home" to="/home" />
+                </FormReroute>
+              </Layout>
             </FormContent>
           </Layout>
         </FormContainer>

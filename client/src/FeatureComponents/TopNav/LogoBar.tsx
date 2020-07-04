@@ -21,7 +21,15 @@ export const LogoBar = (props: Props) => {
 
   return (
     <nav className="logobar">
-      <div className="logobar__container">
+      <Layout
+        height="full"
+        x="p2"
+        y="p.5"
+        flex={true}
+        flexDirection="row"
+        justify="between"
+        align="center"
+      >
         <Link to="/home">
           <Logo styling="logobar__logo" />
         </Link>
@@ -62,7 +70,7 @@ export const LogoBar = (props: Props) => {
         ) : (
           <LogoBarMobile />
         )}
-      </div>
+      </Layout>
     </nav>
   );
 };

@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "semantic-ui-react";
+import { Button } from "../../CommonComponents/Button";
 import { Layout } from "../../CommonComponents/Layout";
 
 interface Props {
@@ -22,9 +22,7 @@ export const TournamentCard = (props: Props) => {
         })}
       </ul>
       <Layout width="full" flex={true} justify="center" padding={0.5}>
-        <Button className="tournament__card__button" primary>
-          {props.button}
-        </Button>
+        <Button primary={true} button={props.button} />
       </Layout>
     </div>
   );

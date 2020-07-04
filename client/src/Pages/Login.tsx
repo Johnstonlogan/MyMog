@@ -38,7 +38,7 @@ export const Login = (props: Props) => {
     <BgImageContainer image={background}>
       {toHome ? <Redirect to="/home" /> : null}
       <FormContainer logo={true}>
-        <Layout padding={2} height="full" flex={true} flexDirection="col">
+        <Layout x="p2" y="p1" height="full" flex={true} flexDirection="col">
           <FormHeader header="Welcome back" />
 
           <FormContent>
@@ -59,9 +59,11 @@ export const Login = (props: Props) => {
               <FormButton submit={handleSubmit} button="Login" />
             </Layout>
             <hr />
-            <FormReroute text="Need an account?">
-              <FormLink to="sign-up" link="Register" />
-            </FormReroute>
+            <Layout margin="t1" padding="y1">
+              <FormReroute text="Need an account?">
+                <FormLink to="sign-up" link="Register" />
+              </FormReroute>
+            </Layout>
           </FormContent>
         </Layout>
       </FormContainer>

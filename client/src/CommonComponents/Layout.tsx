@@ -10,7 +10,7 @@ interface Props {
   x?: string;
   y?: string;
   width?: string;
-  height?: string;
+  height?: string | number;
   justify?: string;
   align?: string;
 }
@@ -22,8 +22,16 @@ interface Props {
 // for full 100% width = "full"
 // for justify "center", "between", "evenly", and "around"
 export const Layout: React.FunctionComponent<Props> = (props) => {
+  let customStyle;
   let classArr = LayoutClass(props);
   let style = classArr.join().replace(/,/g, " ");
+  if (typeof props.height === "number") {
+    customStyle = { height: props.height + "px" };
+  }
 
-  return <div className={style}>{props.children}</div>;
+  return (
+    <div style={customStyle} className={style}>
+      {props.children}
+    </div>
+  );
 };

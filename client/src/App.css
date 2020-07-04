@@ -1,5 +1,5 @@
 .App {
-  padding: 0 30px;
+  padding: 0 2rem;
 }
 .error-message {
   background-color: rgb(238, 11, 11) !important;
@@ -31,4 +31,5 @@ input {
   color: #fff;
   opacity: 0.5;
   bottom: 0;
+  text-align: center;
 }
