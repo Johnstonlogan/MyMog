@@ -106,14 +106,14 @@ class App extends React.Component {
               </authUser.Provider>
             </header>
 
-            <div className="App">
+            <main className="App">
               <Route exact path="/home">
                 <HomePage blues={this.state.blues} guides={this.state.guides} />
               </Route>
               <Route exact path="/create_tournament">
                 <CreateTournament />
               </Route>
-            </div>
+            </main>
           </React.Fragment>
         </Switch>
       );

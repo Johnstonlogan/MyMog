@@ -12,7 +12,7 @@ interface Values {
 }
 
 export const LayoutClass: any = (values: Values) => {
-  let layout: Array<any> = [];
+  let layout: Array<string> = [];
   switch (values.padding) {
     case 1:
       layout.push("my-pd-1");
