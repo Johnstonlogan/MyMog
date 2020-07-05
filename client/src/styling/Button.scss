@@ -31,4 +31,21 @@
       border: 1px solid #fff;
     }
   }
+  &-icon {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    &:focus {
+      border: none;
+      outline: none;
+    }
+    i.icon {
+      margin: 0;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

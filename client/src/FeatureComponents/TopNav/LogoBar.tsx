@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import { Button } from "semantic-ui-react";
 import { Button } from "../../CommonComponents/Button";
 import { Link } from "react-router-dom";
 import { Logo } from "../../CommonComponents/Logo";
@@ -60,10 +59,10 @@ export const LogoBar = (props: Props) => {
             ) : (
               // if logged in show username/avatar(once avatar is added)
               <React.Fragment>
-                <div className="logobar__user">
-                  <p>{user}</p>
+                <Layout flex={true} flexDirection="row" align="center">
+                  <p className="logobar__user">{user}</p>
                   <AvatarDropdown setUser={props.setUser} />
-                </div>
+                </Layout>
               </React.Fragment>
             )}
           </Layout>
