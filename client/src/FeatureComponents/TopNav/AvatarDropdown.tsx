@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import defaultAvatar from "../../images/default-avatar.png";
 import "../../styling/AvatarDropdown.scss";
+import { IconButton } from "../../CommonComponents/IconButton";
+import { StyledLayout } from "../../CommonComponents/StyledLayout";
 
 interface Props {
   setUser: any;
@@ -16,15 +18,15 @@ export const AvatarDropdown = (props: Props) => {
   };
   return (
     <div>
-      <div onClick={() => setOpen(!open)}>
+      <IconButton click={() => setOpen(!open)}>
         <img
           className="logobar__avatar"
           alt="user avatar"
           src={defaultAvatar}
         />
-      </div>
+      </IconButton>
       {open ? (
-        <div className="dropdown-menu">
+        <StyledLayout styleClass="dropdown-menu">
           <div className="dropdown-menu__item" onClick={() => logout()}>
             <p>Logout</p> <i className=" sign out alternate icon"></i>
           </div>
@@ -34,7 +36,7 @@ export const AvatarDropdown = (props: Props) => {
               <i className="envelope icon"></i>
             </div>
           </Link>
-        </div>
+        </StyledLayout>
       ) : null}
     </div>
   );

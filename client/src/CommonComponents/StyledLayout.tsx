@@ -1,7 +1,7 @@
 import React from "react";
 import { LayoutClass } from "../resources/LayoutClass";
 
-interface Layout {
+interface Props {
   padding?: number | string;
   margin?: number | string;
   flex?: boolean;
@@ -12,16 +12,17 @@ interface Layout {
   height?: string | number;
   justify?: string;
   align?: string;
-}
-interface Props {
-  backgroundColor: string;
-  borderRadius: number;
-  border: boolean;
-  layout: Layout;
+  styleClass?: string;
+  key?: number;
 }
 
 export const StyledLayout: React.FunctionComponent<Props> = (props) => {
-  let classArr = LayoutClass(props.layout);
+  let classArr = LayoutClass(props);
   let style = classArr.join().replace(/,/g, " ");
-  return <section className={style}>{props.children}</section>;
+  style = style + " " + props.styleClass;
+  return (
+    <div className={style} key={props.key}>
+      {props.children}
+    </div>
+  );
 };

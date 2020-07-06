@@ -18,7 +18,8 @@ interface Props {
 // for padding on x or y axis send padding={"x1"} x1, x2,x.5 and y1, y2,y.5
 // for margin all around send margin={NUMBER} must be a number 1,2 or 0.5
 // for margin on x or y axis send margin={"x1"} x1, x2,x.5 and y1, y2,y.5
-// for flex send flex={true} flexDirection={"col"} flexDirection={"row"}
+// for flex send flex={true}
+// flexDirection={"col"} flexDirection={"row"}
 // for full 100% width = "full"
 // for justify "center", "between", "evenly", and "around"
 export const Layout: React.FunctionComponent<Props> = (props) => {

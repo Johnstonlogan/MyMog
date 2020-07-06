@@ -8,6 +8,7 @@ import { Icon } from "semantic-ui-react";
 import "../../styling/LogoBar.scss";
 import { AvatarDropdown } from "./AvatarDropdown";
 import { Layout } from "../../CommonComponents/Layout";
+import { Text } from "../../CommonComponents/Text";
 
 interface Props {
   setUser: void;
@@ -60,7 +61,8 @@ export const LogoBar = (props: Props) => {
               // if logged in show username/avatar(once avatar is added)
               <React.Fragment>
                 <Layout flex={true} flexDirection="row" align="center">
-                  <p className="logobar__user">{user}</p>
+                  <Text styleClass="logobar__user">{user}</Text>
+
                   <AvatarDropdown setUser={props.setUser} />
                 </Layout>
               </React.Fragment>

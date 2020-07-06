@@ -3,12 +3,13 @@ import testImage from "../../images/Test-background.jpg";
 import create from "../../images/CreateTournament.jpg";
 import "../../styling/HomePageStyle.scss";
 import { HomeCard } from "./HomeCard";
+import { StyledLayout } from "../../CommonComponents/StyledLayout";
 
 export const HomePage = () => {
   return (
     // container used for all home page components
     <section className="home-container">
-      <div className="home-left">
+      <StyledLayout styleClass="home-side">
         <HomeCard
           content={[
             { text: "Connect with your community.", icon: "world icon small" },
@@ -27,11 +28,9 @@ export const HomePage = () => {
           link={"/create_tournament"}
           image={create}
         />
-        {/* <RecentBar blueArray={props.blues} /> */}
-        {/* <TransmogDisplay /> */}
-      </div>
+      </StyledLayout>
 
-      <div className="home-right">
+      <StyledLayout styleClass="home-side">
         <HomeCard
           content={[
             {
@@ -54,7 +53,7 @@ export const HomePage = () => {
           link={"/join_tournament"}
           image={testImage}
         />
-      </div>
+      </StyledLayout>
     </section>
   );
 };

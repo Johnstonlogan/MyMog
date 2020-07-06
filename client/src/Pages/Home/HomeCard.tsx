@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { FormHeader } from "../../CommonComponents/Forms/FormHeader";
 import { Layout } from "../../CommonComponents/Layout";
 import "../../styling/HomePageStyle.scss";
+import { StyledLayout } from "../../CommonComponents/StyledLayout";
+import { Text } from "../../CommonComponents/Text";
 interface Content {
   text: string;
   icon: string;
@@ -18,39 +20,48 @@ interface Props {
 
 export const HomeCard = (props: Props) => {
   return (
-    <div className="home-card">
-      <Layout margin="b1">
+    <StyledLayout
+      styleClass="home-card"
+      x="p2"
+      y="p1"
+      flex={true}
+      flexDirection="col"
+      justify="between"
+    >
+      <Layout margin={1}>
         <FormHeader header={props.header} />
       </Layout>
-      <div
-        className="home-card__bg-image"
-        style={{ backgroundImage: `url(${props.image})` }}
-      ></div>
+      <Layout width="full" justify="center" flex={true}>
+        <img
+          className="home-card__bg-image"
+          src={props.image}
+          alt={props.header}
+        />
+      </Layout>
 
-      <Layout
-        padding={2}
-        flex={true}
-        justify="center"
-        flexDirection="col"
-        height={250}
-      >
+      <Layout padding={1} flex={true} justify="between" flexDirection="col">
         {props.content.map((item, i) => {
           return (
-            <div className="home-card__content__items" key={i}>
-              <i className={item.icon}></i>
-              <div className="home-card__content__text" key={i}>
-                {item.text}
-              </div>
-            </div>
+            <Layout
+              key={i}
+              padding={"y2"}
+              flex={true}
+              flexDirection="row"
+              align="center"
+              justify="center"
+            >
+              <i className={item.icon + " home-card__content__icon"}></i>
+              <Text styleClass="home-card__content__text">{item.text}</Text>
+            </Layout>
           );
         })}
       </Layout>
 
-      <Layout padding={1} width="full" justify="center" flex={true}>
+      <Layout y="m1" width="full" justify="center" flex={true}>
         <Link to={props.link}>
           <Button primary={true} button={props.button} />
         </Link>
       </Layout>
-    </div>
+    </StyledLayout>
   );
 };
