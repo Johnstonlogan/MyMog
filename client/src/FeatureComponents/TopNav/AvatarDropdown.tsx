@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import defaultAvatar from "../../images/default-avatar.png";
 import "../../styling/AvatarDropdown.scss";
 import { IconButton } from "../../CommonComponents/IconButton";
-import { StyledLayout } from "../../CommonComponents/StyledLayout";
+import { MenuItemButton } from "../../CommonComponents/Menu/MenuItemButton";
+import { DropMenu } from "../../CommonComponents/Menu/DropMenu";
+import { MenuItemLink } from "../../CommonComponents/Menu/MenuItemLink";
 
 interface Props {
   setUser: any;
@@ -26,17 +27,14 @@ export const AvatarDropdown = (props: Props) => {
         />
       </IconButton>
       {open ? (
-        <StyledLayout styleClass="dropdown-menu">
-          <div className="dropdown-menu__item" onClick={() => logout()}>
-            <p>Logout</p> <i className=" sign out alternate icon"></i>
-          </div>
-          <Link to="/feedback">
-            <div className="dropdown-menu__item">
-              <p>Feedback</p>
-              <i className="envelope icon"></i>
-            </div>
-          </Link>
-        </StyledLayout>
+        <DropMenu top={61} right={25}>
+          <MenuItemLink text="Feedback" icon="envelope icon" to="/feedback" />
+          <MenuItemButton
+            icon="sign out alternate icon"
+            text="Logout"
+            click={() => logout()}
+          />
+        </DropMenu>
       ) : null}
     </div>
   );
