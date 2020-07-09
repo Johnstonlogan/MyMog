@@ -12,13 +12,7 @@ interface Props {
 export const MenuItemLink = (props: Props) => {
   return (
     <Link to={props.to}>
-      <Layout
-        flex={true}
-        flexDirection="row"
-        x={"p1"}
-        y={"p1"}
-        justify="between"
-      >
+      <Layout padding={0.5} flex={true} flexDirection="row" justify="between">
         <Text styleClass="drop-menu__item__text">
           {props.text}
           <i className={props.icon}></i>{" "}

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { Text } from "../Text";
 import { Layout } from "../Layout";
 import { IconButton } from "../IconButton";
@@ -14,10 +13,9 @@ export const MenuItemButton = (props: Props) => {
   return (
     <IconButton click={props.click}>
       <Layout
+        padding={0.5}
         flex={true}
         flexDirection="row"
-        x={"p1"}
-        y={"p1"}
         justify="between"
         width="full"
       >

@@ -39,7 +39,7 @@ export const HomeCard = (props: Props) => {
         />
       </Layout>
 
-      <Layout padding={1} flex={true} justify="between" flexDirection="col">
+      <Layout padding={2} flex={true} justify="between" flexDirection="col">
         {props.content.map((item, i) => {
           return (
             <Layout
@@ -57,7 +57,7 @@ export const HomeCard = (props: Props) => {
         })}
       </Layout>
 
-      <Layout y="m1" width="full" justify="center" flex={true}>
+      <Layout width="full" justify="center" flex={true}>
         <Link to={props.link}>
           <Button primary={true} button={props.button} />
         </Link>

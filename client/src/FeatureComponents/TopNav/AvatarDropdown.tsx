@@ -27,7 +27,7 @@ export const AvatarDropdown = (props: Props) => {
         />
       </IconButton>
       {open ? (
-        <DropMenu top={61} right={25}>
+        <DropMenu top={61} right={5}>
           <MenuItemLink text="Feedback" icon="envelope icon" to="/feedback" />
           <MenuItemButton
             icon="sign out alternate icon"
