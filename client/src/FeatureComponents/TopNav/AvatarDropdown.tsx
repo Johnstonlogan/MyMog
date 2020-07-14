@@ -18,7 +18,7 @@ export const AvatarDropdown = (props: Props) => {
     props.setUser({});
   };
   return (
-    <div>
+    <React.Fragment>
       <IconButton click={() => setOpen(!open)}>
         <img
           className="logobar__avatar"
@@ -36,6 +36,6 @@ export const AvatarDropdown = (props: Props) => {
           />
         </DropMenu>
       ) : null}
-    </div>
+    </React.Fragment>
   );
 };
