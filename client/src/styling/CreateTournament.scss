@@ -1,3 +1,5 @@
+@import "vars";
+
 .tournament {
   border-radius: 10px;
 
@@ -7,7 +9,7 @@
 
   &__header {
     padding: 20px;
-    color: #fff;
+    color: $white;
     text-align: center;
     font-size: xx-large;
     font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
@@ -17,12 +19,12 @@
     padding: 20px;
     width: 45%;
     height: 400px;
-    color: #fff;
+    color: $white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #363636;
-    background-color: #252525af;
+    border: 1px solid $light-grey;
+    background-color: $dark-grey;
     border-radius: 10px;
 
     &__list {
@@ -34,7 +36,7 @@
         font-size: medium;
         &::before {
           content: "\25AA";
-          color: #fbae3e;
+          color: $gold;
           font-weight: bold;
           display: inline-block;
           padding-right: 10px;
@@ -44,7 +46,7 @@
 
     &__header {
       text-align: center;
-      color: #fbae3e;
+      color: $gold;
       margin-bottom: 30px;
       font-size: x-large;
     }
@@ -52,7 +54,7 @@
       width: 25%;
       height: 40px;
       &:hover {
-        border: 1px #fff solid;
+        border: 1px $white solid;
       }
     }
   }
@@ -68,7 +70,7 @@
     height: 100%;
     &__card {
       width: 100%;
-      border-bottom: 1px solid #363636;
+      border-bottom: 1px solid $light-grey;
       &:last-child {
         border: none;
         margin-top: 50px;

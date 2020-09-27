@@ -1,3 +1,5 @@
+@import "vars";
+
 .home-container {
   display: flex;
   flex-direction: row;
@@ -8,12 +10,12 @@
 }
 
 .home-card {
-  background-color: #292929af;
+  background-color: $dark-grey;
   border-radius: 20px;
-  min-height: 800px;
+  height: 900px;
   position: relative;
   color: #fff;
-  border: 1px solid #363636;
+  border: 1px solid $light-grey;
 
   &__bg-image {
     border-radius: 20px;
@@ -39,6 +41,7 @@
     width: 100%;
     margin: 0 auto;
     margin-bottom: 20px;
+    padding: 20px;
   }
 }
 @media only screen and (max-width: 768px) {

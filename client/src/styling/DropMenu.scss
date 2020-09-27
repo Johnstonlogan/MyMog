@@ -1,9 +1,11 @@
+@import "vars";
+
 .drop-menu {
   width: 150px;
   position: absolute;
-  background-color: #292929;
-  border: 1px solid #363636;
-  box-shadow: 2px 3px #020202;
+  background-color: $dark-grey;
+  border: 1px solid $light-grey;
+  box-shadow: 2px 3px $dark-shadow;
   border-radius: 5px;
   z-index: 1;
   display: flex;
@@ -12,7 +14,7 @@
 
   &__item {
     &__text {
-      color: #fff;
+      color: $white;
       width: 100%;
       padding: 0;
       margin: 0;
@@ -22,7 +24,7 @@
       justify-content: space-between;
       &:hover {
         cursor: pointer;
-        color: #fbae3e;
+        color: $gold;
       }
     }
   }

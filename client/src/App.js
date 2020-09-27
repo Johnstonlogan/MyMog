@@ -55,14 +55,14 @@ class App extends React.Component {
       this.setState({ blues: blueArray });
     });
 
-    checkToken().then((res) => {
-      if (res === false) {
-        localStorage.removeItem("uId");
-        localStorage.removeItem("loggedIn");
-      } else {
-        this.setCurrentUser(res);
-      }
-    });
+    // checkToken().then((res) => {
+    //   if (res === false) {
+    //     localStorage.removeItem("uId");
+    //     localStorage.removeItem("loggedIn");
+    //   } else {
+    //     this.setCurrentUser(res);
+    //   }
+    // });
   }
 
   render() {

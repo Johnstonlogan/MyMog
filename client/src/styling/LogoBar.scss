@@ -1,7 +1,9 @@
+@import "vars";
+
 .logobar {
+  border-bottom: 1px solid $light-grey;
   height: 60px;
-  background-color: #292929;
-  border-bottom: 1px solid #363636;
+  background-color: $dark-grey;
   width: 100%;
   margin-bottom: 20px;
 
@@ -11,7 +13,7 @@
   }
 
   &__user {
-    color: #fff;
+    color: $white;
     font-size: 15px;
     font-weight: bold;
     padding-right: 20px;
@@ -26,14 +28,14 @@
   }
   &__avatar:hover {
     cursor: pointer;
-    border: 2px solid #4183c4;
+    border: 2px solid $primary;
   }
 }
 .feedback-icon {
-  color: #fff;
+  color: $white;
   &:hover {
     cursor: pointer;
-    color: #fbae3e;
+    color: $gold;
   }
 }
 
@@ -45,27 +47,27 @@
     width: 150px;
     right: 5px;
     top: 61px;
-    background-color: #292929;
+    background-color: $dark-grey;
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid #363636;
+    border: 2px solid $light-grey;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    box-shadow: 2px 3px #020202;
+    box-shadow: 2px 3px $dark-shadow;
     &__icon {
       height: 100%;
       padding-right: 20px;
     }
     &__item {
       padding: 10px;
-      color: #fff;
+      color: $white;
       display: flex;
       flex-direction: row;
       align-content: center;
 
       &:hover {
-        color: #fbae3e;
+        color: $gold;
       }
     }
   }

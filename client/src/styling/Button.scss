@@ -1,18 +1,19 @@
+@import "vars";
 .my-btn {
   cursor: pointer;
   min-height: 35px;
   outline: 0;
   border: none;
   vertical-align: baseline;
-  color: #fff;
-  background-color: #363636;
+  color: $white;
+  background-color: $light-grey;
   padding: 11px 15px;
   font-weight: 700;
   line-height: 1em;
   border-radius: 4px;
   border: solid 1px transparent;
   &:hover {
-    border: 1px solid #fff;
+    border: 1px solid $white;
   }
   &-primary {
     cursor: pointer;
@@ -20,19 +21,19 @@
     outline: 0;
     border: none;
     vertical-align: baseline;
-    background-color: #2185d0;
-    color: #fff;
+    background-color: $primary;
+    color: $white;
     padding: 11px 15px;
     font-weight: 700;
     line-height: 1em;
     border-radius: 4px;
     border: solid 1px transparent;
     &:hover {
-      border: 1px solid #fff;
+      border: 1px solid $white;
     }
   }
   &-icon {
-    color: #fff;
+    color: $white;
     background-color: transparent;
     border: none;
     padding: 0;

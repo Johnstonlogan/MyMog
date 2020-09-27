@@ -1,66 +1,58 @@
-.navbar{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #292929 !important;
-   
-    
+@import "vars";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: $dark-grey !important;
 }
-.disable{
-    pointer-events: none;
+.disable {
+  pointer-events: none;
 }
-.disable:hover{
-    filter: blur(2px);
+.disable:hover {
+  filter: blur(2px);
 }
-.navmenu{
-    background: #292929 !important;
-    border-radius: 5px 5px 0px 0px !important
+.navmenu {
+  background: $dark-grey !important;
+  border-radius: 5px 5px 0px 0px !important;
 }
-.feedback{
-    width: 100px;
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    
- 
+.feedback {
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
 }
 div[aria-label]:hover:after {
-    content: attr(aria-label);
-    padding: 4px 8px;
-    position: absolute;
-    bottom: 120%;
-    left:65%;
-    white-space: nowrap;
-    z-index: 20;
-    background:#93278f;
+  content: attr(aria-label);
+  padding: 4px 8px;
+  position: absolute;
+  bottom: 120%;
+  left: 65%;
+  white-space: nowrap;
+  z-index: 20;
+  background: $purple;
 }
 .feedback:hover {
-    position: relative;
+  position: relative;
 }
-.feedback-icon{
-    color: #fff;
-    display: flex;
-    justify-content: center;
-   
+.feedback-icon {
+  color: $white;
+  display: flex;
+  justify-content: center;
 }
-.feedback-icon:hover{
-    cursor: pointer;
-
+.feedback-icon:hover {
+  cursor: pointer;
 }
 
-.navlinks{
-    border-right: 1px solid #363636;
-    font-size: 16px;
-    color:#fff !important;
-   
+.navlinks {
+  border-right: 1px solid $light-grey;
+  font-size: 16px;
+  color: $white !important;
 }
-.links{
-    text-decoration: none;
-   
-    
+.links {
+  text-decoration: none;
 }
-.links:hover{
-    background-color: #202020;
-    transform: scale(1.05);
+.links:hover {
+  background-color: #202020;
+  transform: scale(1.05);
 }
-

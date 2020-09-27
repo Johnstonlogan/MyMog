@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import defaultAvatar from "../../images/default-avatar.png";
-import "../../styling/AvatarDropdown.scss";
+
 import { IconButton } from "../../CommonComponents/IconButton";
 import { MenuItemButton } from "../../CommonComponents/Menu/MenuItemButton";
 import { DropMenu } from "../../CommonComponents/Menu/DropMenu";

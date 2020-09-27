@@ -1,3 +1,4 @@
+@import "vars";
 .feedback {
   width: 100%;
   height: 100vh;
@@ -35,18 +36,18 @@
     align-items: center;
     &__text {
       border-radius: 10px;
-      background-color: #252525af;
+      background-color: $dark-grey;
       width: 400px;
       padding: 20px;
       height: 500px;
       display: flex;
       flex-direction: column;
-      color: #fff;
+      color: $white;
       font-weight: 200;
       &-types {
         margin-top: 6px;
         font-weight: bold;
-        color: #93278f;
+        color: $purple;
       }
       &-items {
         padding: 5px;
@@ -75,12 +76,12 @@
     align-items: center;
     &__text {
       border-radius: 10px;
-      background-color: #252525af;
+      background-color: $dark-grey;
       width: 400px;
       height: 500px;
       display: flex;
       flex-direction: column;
-      color: #fff;
+      color: $white;
       font-weight: 200;
       h1 {
         width: 100%;
@@ -108,7 +109,7 @@
   height: 80px;
   width: 100%;
   text-align: center;
-  background-color: #1a1a1aaf;
+  background-color: $grey-low-opac;
   border-radius: 10px 10px 0px 0px;
 }
 

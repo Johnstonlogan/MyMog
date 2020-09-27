@@ -1,7 +1,8 @@
+@import "vars";
 .form {
   &__container {
     border-radius: 10px;
-    background-color: #2e2d2daf;
+    background-color: $dark-grey-low-opac;
     width: 400px;
 
     margin: auto;
@@ -12,7 +13,7 @@
 
   &__header {
     text-align: center;
-    color: #fff;
+    color: $white;
     font-weight: bold;
     margin: 0;
   }
@@ -23,7 +24,7 @@
     height: 80px;
     width: 100%;
     text-align: center;
-    background-color: #1a1a1aaf;
+    background-color: $grey-low-opac;
     border-radius: 10px 10px 0px 0px;
   }
   &__input {
@@ -43,10 +44,10 @@
   padding: 5px 25px 25px 25px;
 
   &__link {
-    color: #fbae3e !important;
+    color: $gold !important;
 
     &:hover {
-      color: #93278f !important;
+      color: $purple !important;
     }
   }
 
@@ -55,11 +56,11 @@
     height: 60px;
     font-size: 18px !important;
     &:hover {
-      border: solid #fff 1px;
+      border: solid $white 1px;
     }
   }
   &__reroute {
-    color: #fff;
+    color: $white;
 
     font-size: 17px;
     display: flex;
